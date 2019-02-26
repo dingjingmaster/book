@@ -21,6 +21,7 @@ class CharacterTransInt:
         stack = []
         """ 预处理 """
         cn = cn.strip()
+        cn = cn.replace(' ', '')
         """ 本身就是数字 """
         try:
             value = int(cn)
