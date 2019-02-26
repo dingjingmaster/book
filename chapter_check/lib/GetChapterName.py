@@ -19,13 +19,14 @@ class GetChapterName:
     step21 = ['【']
     step22 = ['】']
     __step2_re = None
-    """ xxx章|节|幕 + 空白字符 提取 """
-    step3 = ['章']
+    """ xxx.xxx(数字)章|节|幕 + 空白字符 提取 """
+    step3 = ['章', '节']
     __step3_re = None
 
     def __init__(self):
         self.__step1_re = re.compile('第\\S+' + '(' + '|'.join(self.step1) + ')', re.U)
         self.__step2_re = re.compile('(' + '|'.join(self.step21) + ')' + '\\S+' + '(' + '|'.join(self.step22) + ')', re.U)
+        self.__step1_re = re.compile('\d?.\d?' + '(' + '|'.join(self.step3) + ')', re.U)
 
     def chapter_index_str(self, cn: str)->str:
         val = ''
@@ -48,6 +49,19 @@ class GetChapterName:
                 val = val.replace(i, '')
             for i in self.step22:
                 val = val.replace(i, '')
+
+        """ 去除第三种情况 """
+        tp3 = self.__step3_re.search(cn)
+        if not flag and tp3:
+            flag = True
+            val = tp3.group()
+            for i in self.step3:
+                val = val.replace(i, '')
+            arr = val.split('.')
+            if len(arr) >= 2:
+                val = arr[len(arr) - 1]
+            else:
+                val = arr[0]
         return val
 
 
