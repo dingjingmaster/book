@@ -19,6 +19,8 @@ class CharacterTransInt:
     def chinese_to_arabic(self, cn: str)->int:
         value = 0
         stack = []
+        """ 预处理 """
+        cn = cn.strip()
         """ 本身就是数字 """
         try:
             value = int(cn)

@@ -13,7 +13,7 @@ import re
 
 class GetChapterName:
     """ 第xxx章|节|幕 提取 """
-    step1 = ['章', '节', '辑']
+    step1 = ['章', '节', '辑', ' ']
     __step1_re = None
     """ 特殊字符 """
     step21 = ['【']
