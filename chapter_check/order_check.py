@@ -19,12 +19,19 @@ if __name__ == '__main__':
     wrong = work_dir + '/resource/chapter_wrong.txt'
     left = work_dir + '/resource/chapter_left.txt'
     summary = work_dir + '/resource/summary.txt'
+    top10000 = work_dir + '/resource/top10000.txt'
     cn = GetChapterName()
     ci = CharacterTransInt()
+    top10000Dict = {}
     right_fw = open(right, 'w', encoding='utf8')
     wrong_fw = open(wrong, 'w', encoding='utf8')
     left_fw = open(left, 'w', encoding='utf8')
     summary_fw = open(summary, 'w', encoding='utf8')
+    with open(top10000, 'r', encoding='utf8') as fr:
+        for line in fr.readlines():
+            line = line.strip()
+            arr = line.split('\t')
+            top10000Dict[arr[0]] = 0
     with open(work_dir + '/resource/charge_chapter.txt',
               'r', encoding='utf8') as fr:
         for line in fr.readlines():
@@ -36,6 +43,8 @@ if __name__ == '__main__':
             arr = line.split('{]')
             gid = arr[1]
             index = 0
+            if gid not in top10000Dict:
+                continue
             for cp in arr[1:]:
                 cp_info = cn.chapter_index_str(cp)
                 if '' == cp_info:
