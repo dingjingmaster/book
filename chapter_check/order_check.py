@@ -31,10 +31,11 @@ if __name__ == '__main__':
             """ 每一行代表一本小说 """
             chapter_index_list = []
             lack_chapter = []
-            filter = set()
+            filter = {}
             line = line.strip()
             arr = line.split('{]')
             gid = arr[1]
+            index = 0
             for cp in arr[1:]:
                 cp_info = cn.chapter_index_str(cp)
                 if '' == cp_info:
@@ -42,7 +43,8 @@ if __name__ == '__main__':
                 cpint = ci.chinese_to_arabic(cp_info)
                 if cpint in filter:
                     continue
-                filter.add(cpint)
+                index += 1
+                filter[cpint] = index
                 chapter_index_list.append(cpint)
             """ 检查是否缺章 """
             chapter_length = len(chapter_index_list)
@@ -54,14 +56,17 @@ if __name__ == '__main__':
                 else:
                     wrongNum += 1
                     """ 检查缺少哪些章节 """
-                    index = 0
-                    for i in chapter_index_list:
-                        if index > 0 and i - chapter_index_list[index - 1] != 1:
-                            lack_chapter.append(str(chapter_index_list[index - 1]))
-                            lack_chapter.append(str(i))
-                            break
-                        index += 1
-                    wrong_fw.write(gid + '\t' + '|'.join(lack_chapter) + '\n')
+                    lackNum = 0
+                    for ik in chapter_index_list:
+                        tmp1 = filter[ik]
+                        if ik + lackNum == tmp1:
+                            continue
+                        lack_chapter.append(str(tmp1))
+                        while True:
+                            lackNum += 1
+                            if ik + lackNum == tmp1:
+                                break
+                    wrong_fw.write(gid + '\t' + str(lackNum) + '\t' + '|'.join(lack_chapter) + '\n')
             else:
                 left_fw.write(line + '\n')
                 leftNum += 1
