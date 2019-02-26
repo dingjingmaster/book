@@ -57,8 +57,8 @@ if __name__ == '__main__':
                     index = 0
                     for i in chapter_index_list:
                         if index > 0 and i - chapter_index_list[index - 1] != 1:
-                            lack_chapter.append(chapter_index_list[index - 1])
-                            lack_chapter.append(i)
+                            lack_chapter.append(str(chapter_index_list[index - 1]))
+                            lack_chapter.append(str(i))
                             break
                         index += 1
                     wrong_fw.write(gid + '\t' + '|'.join(lack_chapter) + '\n')
