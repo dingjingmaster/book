@@ -30,6 +30,7 @@ if __name__ == '__main__':
         for line in fr.readlines():
             """ 每一行代表一本小说 """
             chapter_index_list = []
+            lack_chapter = []
             filter = set()
             line = line.strip()
             arr = line.split('{]')
@@ -41,6 +42,7 @@ if __name__ == '__main__':
                 cpint = ci.chinese_to_arabic(cp_info)
                 if cpint in filter:
                     continue
+                filter.add(cpint)
                 chapter_index_list.append(cpint)
             """ 检查是否缺章 """
             chapter_length = len(chapter_index_list)
@@ -51,7 +53,15 @@ if __name__ == '__main__':
                     right_fw.write(gid + '\n')
                 else:
                     wrongNum += 1
-                    wrong_fw.write(line + '\n')
+                    """ 检查缺少哪些章节 """
+                    index = 0
+                    for i in chapter_index_list:
+                        if index > 0 and i - chapter_index_list[index - 1] != 1:
+                            lack_chapter.append(chapter_index_list[index - 1])
+                            lack_chapter.append(i)
+                            break
+                        index += 1
+                    wrong_fw.write(gid + '\t' + '|'.join(lack_chapter) + '\n')
             else:
                 left_fw.write(line + '\n')
                 leftNum += 1
