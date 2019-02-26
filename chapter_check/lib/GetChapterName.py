@@ -25,7 +25,7 @@ class GetChapterName:
 
     def __init__(self):
         self.__step1_re = re.compile('第\\S+' + '(' + '|'.join(self.step1) + ')', re.U)
-        self.__step1_re = re.compile('(' + '|'.join(self.step21) + ')' + '\\S+' + '(' + '|'.join(self.step22) + ')', re.U)
+        self.__step2_re = re.compile('(' + '|'.join(self.step21) + ')' + '\\S+' + '(' + '|'.join(self.step22) + ')', re.U)
 
     def chapter_index_str(self, cn: str)->str:
         val = ''
