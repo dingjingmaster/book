@@ -56,17 +56,21 @@ if __name__ == '__main__':
                 else:
                     wrongNum += 1
                     """ 检查缺少哪些章节 """
-                    lackNum = 0
+                    lackNumA = 0
+                    lackNumB = 0
                     for ik in chapter_index_list:
                         tmp1 = filter[ik]
-                        if ik + lackNum == tmp1:
+                        if ik + lackNumA == tmp1 + lackNumB:
                             continue
-                        lack_chapter.append(str(tmp1))
+                        lack_chapter.append(str(tmp1) + '_' + str(ik))
                         while True:
-                            lackNum += 1
-                            if ik + lackNum == tmp1:
+                            if ik + lackNumA > tmp1 + lackNumB:
+                                lackNumB += 1
+                            elif ik + lackNumA < tmp1 + lackNumB:
+                                lackNumA += 1
+                            elif ik + lackNumA == tmp1 + lackNumB:
                                 break
-                    wrong_fw.write(gid + '\t' + str(lackNum) + '\t' + '|'.join(lack_chapter) + '\n')
+                    wrong_fw.write(gid + '\t' + '|'.join(lack_chapter) + '\n')
             else:
                 left_fw.write(line + '\n')
                 leftNum += 1
