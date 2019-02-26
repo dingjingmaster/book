@@ -2,7 +2,7 @@
 # -*- coding: utf8 -*-
 
 
-class ChapterTransInt:
+class CharacterTransInt:
     __CN_NUM = {
         '〇': 0, '一': 1, '二': 2, '三': 3, '四': 4, '五': 5, '六': 6, '七': 7, '八': 8, '九': 9,
         '零': 0, '壹': 1, '贰': 2, '叁': 3, '肆': 4, '伍': 5, '陆': 6, '柒': 7, '捌': 8, '玖': 9,
@@ -19,6 +19,14 @@ class ChapterTransInt:
     def chinese_to_arabic(self, cn: str)->int:
         value = 0
         stack = []
+        """ 本身就是数字 """
+        try:
+            value = int(cn)
+            return value
+        except Exception:
+            pass
+
+        """ 汉字数字转阿拉伯数字 """
         for cndig in reversed(cn):
             tmp = 0
             flag = False
@@ -27,7 +35,8 @@ class ChapterTransInt:
                 stack.append(unit)
             else:
                 tmp = self.__CN_NUM.get(cndig)
-                flag = True
+                if tmp:
+                    flag = True
             if flag and len(stack) > 0:
                 value += tmp * stack.pop()
             elif flag and len(stack) == 0:
@@ -47,7 +56,7 @@ if __name__ == '__main__':
         '一万', '一万零一', '一万一千一百一十一', '一万一千九百九十九', '九万九千九百九十九'
     ]
 
-    ct = ChapterTransInt()
+    ct = CharacterTransInt()
 
     for cn in test:
         x = ct.chinese_to_arabic(cn)
