@@ -46,7 +46,7 @@ if __name__ == '__main__':
                     wrongNum += 1
                     wrong_fw.write(line + '\n')
             else:
-                left_fw.write(gid + '\n')
+                left_fw.write(line + '\n')
                 leftNum += 1
             """ 检查是否乱序 """
     right_fw.close()
