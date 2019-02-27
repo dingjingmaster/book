@@ -39,14 +39,13 @@ if __name__ == '__main__':
             """ 每一行代表一本小说 """
             line = line.strip()
             arr = line.split('{]')
-            index = 0
             filter = {}
             gid = arr[1]
-            lack_chapter = []
+            lack_chapter = ''
             chapter_index_list = []
             if gid not in top10000Dict:
                 continue
-            for cp in arr[2:]:
+            for cp in arr[1:]:
                 cp_info = cn.chapter_index_str(cp)
                 if '' == cp_info:
                     debug_fw.write(cp + '\t' + '1' + '\n')
@@ -54,8 +53,7 @@ if __name__ == '__main__':
                 cpint = ci.chinese_to_arabic(cp_info)
                 if (cpint in filter) or (cpint == 0):
                     continue
-                index += 1
-                filter[cpint] = index
+                filter[cpint] = 0
                 chapter_index_list.append(cpint)
             """ 检查是否缺章 """
             chapter_length = len(chapter_index_list)
@@ -66,26 +64,17 @@ if __name__ == '__main__':
                     right_fw.write(gid + '\n')
                 else:
                     wrongNum += 1
-                    """ 检查缺少哪些章节 """
-                    lackNumA = 0
-                    lackNumB = 0
+                    index = 1
+                    # """ 检查缺少哪些章节 """
+                    # lackNumA = 0
+                    # lackNumB = 0
                     for ik in chapter_index_list:
-                        tmp1 = filter[ik]
-                        if ik + lackNumA == tmp1 + lackNumB:
+                        if ik == index:
+                            index += 1
                             continue
-                        lack_chapter.append(str(tmp1))
-                        lack_chapter.append(str(ik))
-                        while True:
-                            if ik + lackNumA > tmp1 + lackNumB:
-                                lackNumB += 1
-                            elif ik + lackNumA < tmp1 + lackNumB:
-                                lackNumA += 1
-                            elif ik + lackNumA == tmp1 + lackNumB:
-                                break
-                    lack_chapter = set(lack_chapter)
-                    lack_chapter = list(lack_chapter)
-                    lack_chapter.sort()
-                    wrong_fw.write(gid + '\t' + '|'.join(lack_chapter) + '\n')
+                        lack_chapter = (str(ik))
+                        break
+                    wrong_fw.write(gid + '\t' + lack_chapter + '\n')
             else:
                 left_fw.write(line + '\n')
                 leftNum += 1
