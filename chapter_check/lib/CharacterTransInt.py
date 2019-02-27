@@ -52,11 +52,11 @@ class CharacterTransInt:
         if value == 0:
             for i in cn:
                 if i in self.__CN_NUM:
-                    tmpInt += i
+                    tmpInt += self.__CN_NUM[i]
                 if i in self.__CNN_UNIT:
                     flag = True
                     break
-            if not flag:
+            if not flag and tmpInt != '':
                 value = int(tmpInt)
 
         return value
