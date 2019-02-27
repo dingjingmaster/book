@@ -86,8 +86,8 @@ class GetChapterName:
                     break
         """ 去除关键字(比较暴力) """
         val = val.replace('第', '')
-        for i in set(self.step1) | set(self.step21) | set(self.step22) | set(self.step4) | set('.'):
-            val = val.replace(i, '')
+        for m in set(self.step1) | set(self.step21) | set(self.step22) | set(self.step4) | set('.'):
+            val = val.replace(m, '')
         return val.strip()
 
 
