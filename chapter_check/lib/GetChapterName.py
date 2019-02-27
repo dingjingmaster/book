@@ -13,7 +13,7 @@ import re
 
 class GetChapterName:
     """ 第xxx章|节|幕 提取 """
-    step1 = ['章', '节', '辑', ' ', '\\s', ',', '，', ':', '：']
+    step1 = ['章', '节', '辑', ' ', ' ', ',', '，', ':', '：']
     __step1_re = None
     """ 特殊字符 """
     step21 = ['【']
@@ -23,7 +23,7 @@ class GetChapterName:
     step3 = ['章', '节', '幕', ':', '：', ',', '，', '、', '\\d+', '\\S+ ']
     __step3_re = None
     """ 第 xxx(数字) 提取 """
-    step4 = ['第', '章', '(C|c)hapter\\d+']
+    step4 = ['第', '章', 'Chapter']
     __step4_re = None
     """ 直接提取 """
     step5 = [
@@ -42,6 +42,8 @@ class GetChapterName:
     def chapter_index_str(self, cn: str)->str:
         val = ''
         flag = False
+        """ 处理不可见字符 """
+        re.sub('[\\t\\r\\n\\f\\v　]', '', cn)
         """ 去除第一种情况 """
         tp1 = self.__step1_re.search(cn)
         if not flag and tp1:
@@ -97,7 +99,7 @@ if __name__ == '__main__':
         '11. 【九百九十九】 测试', '11.【999】测试',
         '11.999章测试', '11.999 章 测试', '248.九百九十九章 真假观沧海', '7.007 大当家的', '85.085.杀鸡儆猴', '444.第九百九十九.疑点重重', '236.第二百三十五进入皇宫的方法',
         '11.第 999 测试', '11.第 999测试', '369.章九百九十九 偶遇',
-        '2.二'
+        '2.二', '83.第二卷在京都　第四十三章　破窗'
     ]
 
     cn = GetChapterName()
