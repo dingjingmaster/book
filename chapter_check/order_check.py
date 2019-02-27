@@ -27,6 +27,7 @@ if __name__ == '__main__':
     wrong_fw = open(wrong, 'w', encoding='utf8')
     left_fw = open(left, 'w', encoding='utf8')
     summary_fw = open(summary, 'w', encoding='utf8')
+    debug_fw = open(work_dir + '/resource/debug.txt', 'w', encoding='utf8')
     with open(top10000, 'r', encoding='utf8') as fr:
         for line in fr.readlines():
             line = line.strip()
@@ -36,18 +37,19 @@ if __name__ == '__main__':
               'r', encoding='utf8') as fr:
         for line in fr.readlines():
             """ 每一行代表一本小说 """
-            chapter_index_list = []
-            lack_chapter = []
-            filter = {}
             line = line.strip()
             arr = line.split('{]')
-            gid = arr[1]
             index = 0
+            filter = {}
+            gid = arr[1]
+            lack_chapter = []
+            chapter_index_list = []
             if gid not in top10000Dict:
                 continue
-            for cp in arr[1:]:
+            for cp in arr[2:]:
                 cp_info = cn.chapter_index_str(cp)
                 if '' == cp_info:
+                    debug_fw.write(cp + '\t' + '1' + '\n')
                     continue
                 cpint = ci.chinese_to_arabic(cp_info)
                 if (cpint in filter) or (cpint == 0):
@@ -94,6 +96,7 @@ if __name__ == '__main__':
              + '总共: ' + str(rightNum + wrongNum + leftNum)
     print(result)
     summary_fw.write(result)
+    debug_fw.close()
     right_fw.close()
     wrong_fw.close()
     left_fw.close()

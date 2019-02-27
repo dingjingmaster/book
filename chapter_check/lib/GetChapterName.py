@@ -20,7 +20,7 @@ class GetChapterName:
     step22 = ['】']
     __step2_re = None
     """ xxx.xxx(数字)章|节|幕 + 空白字符 提取 """
-    step3 = ['章', '节']
+    step3 = ['章', '节', '幕', ' ', ':', '：']
     __step3_re = None
     """ 第 xxx(数字) 提取 """
     step4 = ['第']
@@ -28,9 +28,9 @@ class GetChapterName:
 
     def __init__(self):
         self.__step1_re = re.compile('第.?\\S+.?' + '(' + '|'.join(self.step1) + ')', re.U)
-        self.__step2_re = re.compile('(' + '|'.join(self.step21) + ')' + '.+\\S+.?' + '(' + '|'.join(self.step22) + ')', re.U)
-        self.__step3_re = re.compile('\\d?\\.\\S?.?' + '(' + '|'.join(self.step3) + ')', re.U)
-        self.__step4_re = re.compile('(' + '|'.join(self.step4) + ')' + '.?\\d?', re.U)
+        self.__step2_re = re.compile('(' + '|'.join(self.step21) + ')' + '.?\\S+.?' + '(' + '|'.join(self.step22) + ')', re.U)
+        self.__step3_re = re.compile('\\d+\\.\\d+.?' + '(' + '|'.join(self.step3) + ')', re.U)
+        self.__step4_re = re.compile('(' + '|'.join(self.step4) + ')' + '.?\\d+', re.U)
 
     def chapter_index_str(self, cn: str)->str:
         val = ''
@@ -73,8 +73,21 @@ class GetChapterName:
             val = tp4.group()
             for i in self.step4:
                 val = val.replace(i, '')
-        return val
+        return val.strip()
 
 
 if __name__ == '__main__':
+    test = [
+        '11. 第一章 测试', '11.第 一 章 测试', '11. 第 二百九十九 辑 萨达', '11. 第二百九十九 测试',
+        '11. 【1】 测试', '11.【二】测试',
+        '11.22章测试', '11.23节 测试', '11.24 节 测试',
+        '11.第 33 测试', '11.第 33测试'
+    ]
+
+    cn = GetChapterName()
+    for i in test:
+        res = cn.chapter_index_str(i)
+        print(i)
+        print('---->' + res)
+    
     exit(0)
