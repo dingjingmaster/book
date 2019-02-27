@@ -45,6 +45,19 @@ class CharacterTransInt:
                 value += tmp
         if len(stack) > 0:
             value += stack.pop()
+        
+        """ 一零一 类型的转换 """
+        flag = False
+        tmpInt = ''
+        if value == 0:
+            for i in cn:
+                if i in self.__CN_NUM:
+                    tmpInt += i
+                if i in self.__CNN_UNIT:
+                    flag = True
+                    break
+            if not flag:
+                value = int(tmpInt)
 
         return value
 
