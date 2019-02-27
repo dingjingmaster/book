@@ -65,9 +65,6 @@ if __name__ == '__main__':
                 else:
                     wrongNum += 1
                     index = 1
-                    # """ 检查缺少哪些章节 """
-                    # lackNumA = 0
-                    # lackNumB = 0
                     for ik in chapter_index_list:
                         if ik == index:
                             index += 1

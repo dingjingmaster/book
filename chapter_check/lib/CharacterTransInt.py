@@ -27,45 +27,44 @@ class CharacterTransInt:
             return value
         except Exception:
             pass
-
-        """ 汉字数字转阿拉伯数字 """
-        for cndig in reversed(cn):
-            tmp = 0
-            flag = False
-            if cndig in self.__CNN_UNIT:
-                unit = self.__CNN_UNIT.get(cndig)
-                stack.append(unit)
-            else:
-                tmp = self.__CN_NUM.get(cndig)
-                if tmp:
-                    flag = True
-            if flag and len(stack) > 0:
-                value += tmp * stack.pop()
-            elif flag and len(stack) == 0:
-                value += tmp
-        if len(stack) > 0:
-            value += stack.pop()
-        
         """ 一零一 类型的转换 """
         flag = False
         tmpInt = ''
+        for i in cn:
+            if i in self.__CN_NUM:
+                tmpInt += str(self.__CN_NUM[i])
+            if i in self.__CNN_UNIT:
+                flag = True
+                break
+        if not flag and tmpInt != '':
+            value = int(tmpInt)
+
+        """ 汉字数字转阿拉伯数字 """
         if value == 0:
-            for i in cn:
-                if i in self.__CN_NUM:
-                    tmpInt += str(self.__CN_NUM[i])
-                if i in self.__CNN_UNIT:
-                    flag = True
-                    break
-            if not flag and tmpInt != '':
-                value = int(tmpInt)
+            for cndig in reversed(cn):
+                tmp = 0
+                flag = False
+                if cndig in self.__CNN_UNIT:
+                    unit = self.__CNN_UNIT.get(cndig)
+                    stack.append(unit)
+                else:
+                    tmp = self.__CN_NUM.get(cndig)
+                    if tmp:
+                        flag = True
+                if flag and len(stack) > 0:
+                    value += tmp * stack.pop()
+                elif flag and len(stack) == 0:
+                    value += tmp
+            if len(stack) > 0:
+                value += stack.pop()
 
         return value
 
 
 if __name__ == '__main__':
     test = [
-        '十', '一十', '九十九', '一百', '九百九十九', '一千',  '九千九百九十九', '一万', '九万九千九百九十九',
-        '两百',
+        '十', '十一', '二十一', '九万九千九百九十九', '两百',
+        '一零四',
     ]
 
     ct = CharacterTransInt()
