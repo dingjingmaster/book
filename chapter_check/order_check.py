@@ -50,7 +50,7 @@ if __name__ == '__main__':
                 if '' == cp_info:
                     continue
                 cpint = ci.chinese_to_arabic(cp_info)
-                if cpint in filter:
+                if (cpint in filter) or (cpint == 0):
                     continue
                 index += 1
                 filter[cpint] = index
@@ -71,7 +71,8 @@ if __name__ == '__main__':
                         tmp1 = filter[ik]
                         if ik + lackNumA == tmp1 + lackNumB:
                             continue
-                        lack_chapter.append(str(tmp1) + '_' + str(ik))
+                        lack_chapter.append(str(tmp1))
+                        lack_chapter.append(str(ik))
                         while True:
                             if ik + lackNumA > tmp1 + lackNumB:
                                 lackNumB += 1
@@ -79,6 +80,9 @@ if __name__ == '__main__':
                                 lackNumA += 1
                             elif ik + lackNumA == tmp1 + lackNumB:
                                 break
+                    lack_chapter = set(lack_chapter)
+                    lack_chapter = list(lack_chapter)
+                    lack_chapter.sort()
                     wrong_fw.write(gid + '\t' + '|'.join(lack_chapter) + '\n')
             else:
                 left_fw.write(line + '\n')
