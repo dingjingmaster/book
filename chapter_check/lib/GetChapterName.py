@@ -20,10 +20,10 @@ class GetChapterName:
     step22 = ['】']
     __step2_re = None
     """ xxx.xxx(数字)章|节|幕 + 空白字符 提取 """
-    step3 = ['章', '节', '幕', ':', '：', ',', '，', '、', '\\d+', '\\S+ ']
+    step3 = ['章', '节', '幕', '回', ':', '：', ',', '，', '、', '\\d+', '\\S+ ']
     __step3_re = None
     """ 第 xxx(数字) 提取 """
-    step4 = ['第', '章', 'Chapter']
+    step4 = ['第', '章', '(c|C)hapter.?', '(c|C)', '回']
     __step4_re = None
     """ 直接提取 """
     step5 = [

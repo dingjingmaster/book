@@ -19,7 +19,7 @@ if __name__ == '__main__':
     wrong = work_dir + '/resource/chapter_wrong.txt'
     left = work_dir + '/resource/chapter_left.txt'
     summary = work_dir + '/resource/summary.txt'
-    top10000 = work_dir + '/resource/top10000.txt'
+    top10000 = work_dir + '/resource/top1000.txt'
     cn = GetChapterName()
     ci = CharacterTransInt()
     top10000Dict = {}
@@ -32,7 +32,12 @@ if __name__ == '__main__':
         for line in fr.readlines():
             line = line.strip()
             arr = line.split('\t')
-            top10000Dict[arr[0]] = 0
+            status = ''
+            if int(arr[2]) == 2:
+                status = '完结'
+            else:
+                status = '连载'
+            top10000Dict[arr[0]] = status
     with open(work_dir + '/resource/charge_chapter.txt',
               'r', encoding='utf8') as fr:
         for line in fr.readlines():
@@ -71,7 +76,7 @@ if __name__ == '__main__':
                             continue
                         lack_chapter = str(index)
                         break
-                    wrong_fw.write(gid + '\t' + lack_chapter + '\n')
+                    wrong_fw.write(gid + '\t' + top10000Dict[gid] + '\t' + lack_chapter + '\n')
             else:
                 left_fw.write(line + '\n')
                 leftNum += 1
