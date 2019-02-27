@@ -69,7 +69,7 @@ if __name__ == '__main__':
                         if ik == index:
                             index += 1
                             continue
-                        lack_chapter = (str(ik))
+                        lack_chapter = str(index)
                         break
                     wrong_fw.write(gid + '\t' + lack_chapter + '\n')
             else:

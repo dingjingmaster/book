@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="311cabd7-24b5-4690-b87f-1a2e26ff9330" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/lib/GetChapterName.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/GetChapterName.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order_check.py" beforeDir="false" afterPath="$PROJECT_DIR$/order_check.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,7 +12,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/GetChapterName.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="398">
@@ -24,11 +24,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/order_check.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-701">
-              <caret line="31" column="22" lean-forward="true" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+            <state relative-caret-position="489">
+              <caret line="71" column="39" lean-forward="true" selection-start-line="71" selection-start-column="39" selection-end-line="71" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -56,10 +56,10 @@
         <option value="$PROJECT_DIR$/function.py" />
         <option value="$PROJECT_DIR$/lib/README.md" />
         <option value="$PROJECT_DIR$/oreder_check.sh" />
-        <option value="$PROJECT_DIR$/order_check.py" />
         <option value="$PROJECT_DIR$/lib/CharacterTransInt.py" />
         <option value="$PROJECT_DIR$/resource/chapter_left.txt" />
         <option value="$PROJECT_DIR$/lib/GetChapterName.py" />
+        <option value="$PROJECT_DIR$/order_check.py" />
       </list>
     </option>
   </component>
@@ -121,7 +121,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.GetChapterName">
+  <component name="RunManager" selected="Python.order_check">
     <configuration name="CharacterTransInt" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="chapter_check" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -187,8 +187,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.GetChapterName" />
         <item itemvalue="Python.order_check" />
+        <item itemvalue="Python.GetChapterName" />
         <item itemvalue="Python.CharacterTransInt" />
       </list>
     </recent_temporary>
@@ -315,13 +315,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/order_check.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-701">
-          <caret line="31" column="22" lean-forward="true" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/GetChapterName.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
@@ -329,6 +322,13 @@
           <folding>
             <element signature="e#810#1241#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/order_check.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="71" column="39" lean-forward="true" selection-start-line="71" selection-start-column="39" selection-end-line="71" selection-end-column="39" />
         </state>
       </provider>
     </entry>
