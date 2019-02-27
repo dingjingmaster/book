@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="311cabd7-24b5-4690-b87f-1a2e26ff9330" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/lib/CharacterTransInt.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/CharacterTransInt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_check.py" beforeDir="false" afterPath="$PROJECT_DIR$/order_check.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/GetChapterName.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/GetChapterName.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,30 +12,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/order_check.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/GetChapterName.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="66" column="29" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
+            <state relative-caret-position="70">
+              <caret line="76" column="21" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
+              <folding>
+                <element signature="e#810#1241#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource/debug.txt">
+        <entry file="file://$PROJECT_DIR$/resource/chapter_left.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1231516" />
+            <state relative-caret-position="323">
+              <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="26" />
+            </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/CharacterTransInt.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/order_check.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="65" column="25" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
-              <folding>
-                <element signature="e#525#1714#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1092">
+              <caret line="66" column="29" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -64,9 +65,10 @@
         <option value="$PROJECT_DIR$/function.py" />
         <option value="$PROJECT_DIR$/lib/README.md" />
         <option value="$PROJECT_DIR$/oreder_check.sh" />
-        <option value="$PROJECT_DIR$/lib/GetChapterName.py" />
         <option value="$PROJECT_DIR$/order_check.py" />
         <option value="$PROJECT_DIR$/lib/CharacterTransInt.py" />
+        <option value="$PROJECT_DIR$/resource/chapter_left.txt" />
+        <option value="$PROJECT_DIR$/lib/GetChapterName.py" />
       </list>
     </option>
   </component>
@@ -128,7 +130,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.order_check">
+  <component name="RunManager" selected="Python.GetChapterName">
     <configuration name="CharacterTransInt" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="chapter_check" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -194,9 +196,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.GetChapterName" />
         <item itemvalue="Python.order_check" />
         <item itemvalue="Python.CharacterTransInt" />
-        <item itemvalue="Python.GetChapterName" />
       </list>
     </recent_temporary>
   </component>
@@ -280,27 +282,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resource/chapter_left.txt">
-      <provider editor-type-id="LargeFileEditor">
-        <state relative-caret-position="323">
-          <caret line="95" column="39" selection-start-line="95" selection-start-column="39" selection-end-line="95" selection-end-column="39" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resource/chapter_right.txt">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/order_check.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="66" column="29" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resource/debug.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -319,23 +302,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/GetChapterName.py">
+    <entry file="file://$PROJECT_DIR$/lib/CharacterTransInt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="95" column="82" selection-start-line="95" selection-start-column="82" selection-end-line="95" selection-end-column="82" />
+        <state relative-caret-position="302">
+          <caret line="65" column="25" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
           <folding>
-            <element signature="e#640#1167#0" expanded="true" />
-            <element signature="e#1408#2786#0" expanded="true" />
+            <element signature="e#525#1714#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/CharacterTransInt.py">
+    <entry file="file://$PROJECT_DIR$/resource/chapter_left.txt">
+      <provider editor-type-id="LargeFileEditor">
+        <state relative-caret-position="323">
+          <caret line="95" column="39" selection-start-line="95" selection-start-column="39" selection-end-line="95" selection-end-column="39" />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="65" column="25" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
+        <state relative-caret-position="323">
+          <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/order_check.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1092">
+          <caret line="66" column="29" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/GetChapterName.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="76" column="21" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
           <folding>
-            <element signature="e#525#1714#0" expanded="true" />
+            <element signature="e#810#1241#0" expanded="true" />
           </folding>
         </state>
       </provider>
