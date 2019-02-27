@@ -13,24 +13,24 @@ import re
 
 class GetChapterName:
     """ 第xxx章|节|幕 提取 """
-    step1 = ['章', '节', '辑', ' ', '\\s']
+    step1 = ['章', '节', '辑', ' ', '\\s', ',', '，']
     __step1_re = None
     """ 特殊字符 """
     step21 = ['【']
     step22 = ['】']
     __step2_re = None
     """ xxx.xxx(数字)章|节|幕 + 空白字符 提取 """
-    step3 = ['章', '节', '幕', ' ', ':', '：']
+    step3 = ['章', '节', '幕', ':', '：', ',', '，', '、', '\\d+', '\\S+ ']
     __step3_re = None
     """ 第 xxx(数字) 提取 """
-    step4 = ['第']
+    step4 = ['第', '章']
     __step4_re = None
 
     def __init__(self):
         self.__step1_re = re.compile('第.?\\S+.?' + '(' + '|'.join(self.step1) + ')', re.U)
         self.__step2_re = re.compile('(' + '|'.join(self.step21) + ')' + '.?\\S+.?' + '(' + '|'.join(self.step22) + ')', re.U)
-        self.__step3_re = re.compile('\\d+\\.\\d+.?' + '(' + '|'.join(self.step3) + ')', re.U)
-        self.__step4_re = re.compile('(' + '|'.join(self.step4) + ')' + '.?\\d+', re.U)
+        self.__step3_re = re.compile('\\d+\\.(\\d+\\.|\\d+.?|.?\\S+.?)' + '(' + '|'.join(self.step3) + ')', re.U | re.DOTALL)
+        self.__step4_re = re.compile('(' + '|'.join(self.step4) + ')' + '(.?\\d+|\\S+ )', re.U)
 
     def chapter_index_str(self, cn: str)->str:
         val = ''
@@ -40,19 +40,12 @@ class GetChapterName:
         if not flag and tp1:
             flag = True
             val = tp1.group()
-            val = val.replace('第', '')
-            for i in self.step1:
-                val = val.replace(i, '')
 
         """ 去除第二种情况 """
         tp2 = self.__step2_re.search(cn)
         if not flag and tp2:
             flag = True
             val = tp2.group()
-            for i in self.step21:
-                val = val.replace(i, '')
-            for i in self.step22:
-                val = val.replace(i, '')
 
         """ 去除第三种情况 """
         tp3 = self.__step3_re.search(cn)
@@ -71,23 +64,25 @@ class GetChapterName:
         if not flag and tp4:
             flag = True
             val = tp4.group()
-            for i in self.step4:
-                val = val.replace(i, '')
+            
+        """ 去除关键字 """
+        val = val.replace('第', '')
+        for i in set(self.step1) | set(self.step21) | set(self.step22) | set(self.step4):
+            val = val.replace(i, '')
         return val.strip()
 
 
 if __name__ == '__main__':
     test = [
-        '11. 第一章 测试', '11.第 一 章 测试', '11. 第 二百九十九 辑 萨达', '11. 第二百九十九 测试', '第二百二十七　',
-        '11. 【1】 测试', '11.【二】测试',
-        '11.22章测试', '11.23节 测试', '11.24 节 测试',
-        '11.第 33 测试', '11.第 33测试'
+        '11. 第九百九十九章 测试', '11.第 九百九十九 章 测试', '11. 第九百九十九 测试', '22. 第九百九十九　',
+        '11. 【九百九十九】 测试', '11.【999】测试',
+        '11.999章测试', '11.999 章 测试', '248.九百九十九章 真假观沧海', '7.007 大当家的', '85.085.杀鸡儆猴',
+        '11.第 999 测试', '11.第 999测试', '369.章九百九十九 偶遇'
     ]
 
     cn = GetChapterName()
     for i in test:
         res = cn.chapter_index_str(i)
-        print(i)
-        print('---->' + res)
+        print('%-60s\t------>\t%-20s' % (i, res))
     
     exit(0)
