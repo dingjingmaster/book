@@ -5,7 +5,7 @@ __pycache__/
 
 # C extensions
 *.so
-
+main
 # Distribution / packaging
 .Python
 build/
@@ -23,6 +23,7 @@ wheels/
 *.egg
 resource/
 MANIFEST
+jar/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
