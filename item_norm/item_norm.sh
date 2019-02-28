@@ -80,7 +80,7 @@ spark-submit --py-files libs.zip dispose_chapter.py "${whiteGid}" "${whitePair}"
 #cd ${workPath}/sim/calc_similarity/
 #spark-submit ${sparkConf} "${globalSavePath}"
 
-#cd ${workPath}/union_rule_similarity
+#cd ${workPath}/union
 #hadoop fs -cat "${globalSavePath}/sim_result/*" > "${simResult}"
 #python2 union2.py "${ruleResult}" "${simResult}" "${finallyResult}"
 
