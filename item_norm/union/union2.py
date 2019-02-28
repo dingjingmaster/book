@@ -177,10 +177,3 @@ if __name__ == '__main__':
     out_result(rulePath, resultDict, outPath)
     print ("最终结果输出完成")
 
-
-
-
-
-
-
-    pass
