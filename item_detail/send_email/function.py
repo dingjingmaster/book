@@ -667,7 +667,7 @@ def free_num(loglist, freelist):
             , bysfbyuusernum, bysfbyuchapternum = i
         usernumtemp = int(usernum) + int(bysbyuusernum) + int(bysfbyuusernum)
         userfreetemp = int(chapternum) + int(bysbyuchapternum) + int(bysfbyuchapternum)
-        if feeflag == u'0' and by == u'000' and tf == u'000': # 纯粹的付费书
+        if feeflag == u'0': # 纯粹的付费书
             allbook += 1
             allbookuser += int(usernumtemp)
             allbookchapter += int(userfreetemp)
