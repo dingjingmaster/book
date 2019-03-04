@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6393b52f-c17b-4fb9-a966-354c257f0c78" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/send_email/auto_email.sh" beforeDir="false" afterPath="$PROJECT_DIR$/send_email/auto_email.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/send_email/generate_read_email.py" beforeDir="false" afterPath="$PROJECT_DIR$/send_email/generate_read_email.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,29 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/send_email/generate_read_email.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/send_email/function.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="677" column="67" lean-forward="true" selection-start-line="677" selection-start-column="67" selection-end-line="677" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/send_email/auto_email.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+            <state relative-caret-position="276">
+              <caret line="59" column="6" selection-start-line="59" selection-start-column="6" selection-end-line="59" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -56,15 +38,15 @@
         <option value="$PROJECT_DIR$/start.sh" />
         <option value="$PROJECT_DIR$/bin/item_buy.py" />
         <option value="$PROJECT_DIR$/bin/item_read.py" />
-        <option value="$PROJECT_DIR$/send_email/generate_read_email.py" />
         <option value="$PROJECT_DIR$/send_email/function.py" />
         <option value="$PROJECT_DIR$/send_email/auto_email.sh" />
+        <option value="$PROJECT_DIR$/send_email/generate_read_email.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="563" />
-    <option name="y" value="149" />
+    <option name="x" value="477" />
+    <option name="y" value="158" />
     <option name="width" value="1429" />
     <option name="height" value="872" />
   </component>
@@ -130,10 +112,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="563" y="149" width="1429" height="872" extended-state="0" />
+    <frame x="484" y="121" width="1429" height="872" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25309992" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25309992" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -145,7 +127,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32884097" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -181,24 +163,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/send_email/generate_read_email.py">
+    <entry file="file://$PROJECT_DIR$/send_email/auto_email.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+        <state relative-caret-position="441">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/send_email/function.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="677" column="67" lean-forward="true" selection-start-line="677" selection-start-column="67" selection-end-line="677" selection-end-column="67" />
+        <state relative-caret-position="720">
+          <caret line="880" column="24" selection-start-line="880" selection-start-column="24" selection-end-line="880" selection-end-column="24" />
+          <folding>
+            <element signature="e#27438#30923#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/send_email/auto_email.sh">
+    <entry file="file://$PROJECT_DIR$/send_email/generate_read_email.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+        <state relative-caret-position="276">
+          <caret line="59" column="6" selection-start-line="59" selection-start-column="6" selection-end-line="59" selection-end-column="6" />
         </state>
       </provider>
     </entry>

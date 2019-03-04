@@ -57,7 +57,7 @@ if __name__ == '__main__':
     outBufG += print_list(tfListG,      "限免书阅读情况",     ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))
     outBufG += print_list(bysbyuListG,    "包月用户看包月书", ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))
     outBufG += print_list(bysfbyuListG, "非包月用户看包月书", ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))
-    #outBufG += print_list(monthListG,           "包月书情况", ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))
+    # outBufG += print_list(monthListG,           "包月书情况", ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))
 
     outBufG += print_book_top(chargeTopG, "付费书排行榜", ("排名", "书籍ID", "书籍名", "作者名", "阅读量", "阅读章节数"))
     outBufG += print_book_top(fcTopG, "全免书排行榜", ("排名", "书籍ID", "书籍名", "作者名", "阅读量", "阅读章节数"))
