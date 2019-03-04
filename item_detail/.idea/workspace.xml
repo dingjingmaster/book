@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6393b52f-c17b-4fb9-a966-354c257f0c78" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../item_norm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../item_norm/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/send_email/function.py" beforeDir="false" afterPath="$PROJECT_DIR$/send_email/function.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,23 +12,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/send_email/generate_read_email.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="61" column="56" lean-forward="true" selection-start-line="61" selection-start-column="56" selection-end-line="61" selection-end-column="56" />
+            <state relative-caret-position="486">
+              <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/send_email/function.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="641" column="32" lean-forward="true" selection-start-line="641" selection-start-column="32" selection-end-line="641" selection-end-column="32" />
-              <folding>
-                <element signature="e#27438#30923#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="236">
+              <caret line="669" column="25" selection-start-line="669" selection-start-column="25" selection-end-line="669" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -52,14 +47,14 @@
         <option value="$PROJECT_DIR$/start.sh" />
         <option value="$PROJECT_DIR$/bin/item_buy.py" />
         <option value="$PROJECT_DIR$/bin/item_read.py" />
-        <option value="$PROJECT_DIR$/send_email/function.py" />
         <option value="$PROJECT_DIR$/send_email/generate_read_email.py" />
+        <option value="$PROJECT_DIR$/send_email/function.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="419" />
-    <option name="y" value="70" />
+    <option name="x" value="293" />
+    <option name="y" value="40" />
     <option name="width" value="1429" />
     <option name="height" value="872" />
   </component>
@@ -125,7 +120,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="419" y="70" width="1429" height="872" extended-state="0" />
+    <frame x="293" y="40" width="1429" height="872" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25309992" />
@@ -176,20 +171,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/send_email/function.py">
+    <entry file="file://$PROJECT_DIR$/send_email/generate_read_email.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="641" column="32" lean-forward="true" selection-start-line="641" selection-start-column="32" selection-end-line="641" selection-end-column="32" />
-          <folding>
-            <element signature="e#27438#30923#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="486">
+          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/send_email/generate_read_email.py">
+    <entry file="file://$PROJECT_DIR$/send_email/function.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="61" column="56" lean-forward="true" selection-start-line="61" selection-start-column="56" selection-end-line="61" selection-end-column="56" />
+        <state relative-caret-position="236">
+          <caret line="669" column="25" selection-start-line="669" selection-start-column="25" selection-end-line="669" selection-end-column="25" />
         </state>
       </provider>
     </entry>
