@@ -32,6 +32,9 @@ if __name__ == '__main__':
     freeTopG = []
     pubTopG = []
     cpListG = []
+    
+    # 去掉屏蔽书，免费书的情况
+    freeListNoMaskG = []
 
     ##
     parse_info(logPath, logListG)
@@ -42,6 +45,7 @@ if __name__ == '__main__':
     month_num(logListG, bysbyuListG, bysfbyuListG, monthListG)
     charge_num(logListG, chargeListG)                           # 付费情况
     free_num(logListG, freeListG)                               # 免费书情况
+    free_nomask_num(logListG, freeListNoMaskG)                  # 去除屏蔽的免费书阅读情况
     tf_num(logListG, tfListG)                                   # 付费情况
 
     chargeTopG, monthTopG, tfTopG, freeTopG, pubTopG, fcTopG \
@@ -54,6 +58,7 @@ if __name__ == '__main__':
 
     outBufG += print_list(chargeListG,          "付费书情况", ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))
     outBufG += print_list(freeListG,          "免费书情况", ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))
+    outBufG += print_list(freeListG,          "去除屏蔽后免费书情况", ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))
     outBufG += print_list(tfListG,      "限免书阅读情况",     ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))
     outBufG += print_list(bysbyuListG,    "包月用户看包月书", ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))
     outBufG += print_list(bysfbyuListG, "非包月用户看包月书", ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))

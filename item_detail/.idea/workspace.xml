@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6393b52f-c17b-4fb9-a966-354c257f0c78" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/send_email/function.py" beforeDir="false" afterPath="$PROJECT_DIR$/send_email/function.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/send_email/generate_read_email.py" beforeDir="false" afterPath="$PROJECT_DIR$/send_email/generate_read_email.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,8 +16,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/send_email/generate_read_email.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="58" column="86" selection-start-line="58" selection-start-column="86" selection-end-line="58" selection-end-column="86" />
+            <state relative-caret-position="380">
+              <caret line="60" column="52" selection-start-line="60" selection-start-column="52" selection-end-line="60" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/send_email/function.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="205">
+              <caret line="796" lean-forward="true" selection-start-line="796" selection-end-line="796" />
             </state>
           </provider>
         </entry>
@@ -38,15 +48,15 @@
         <option value="$PROJECT_DIR$/start.sh" />
         <option value="$PROJECT_DIR$/bin/item_buy.py" />
         <option value="$PROJECT_DIR$/bin/item_read.py" />
-        <option value="$PROJECT_DIR$/send_email/function.py" />
         <option value="$PROJECT_DIR$/send_email/auto_email.sh" />
+        <option value="$PROJECT_DIR$/send_email/function.py" />
         <option value="$PROJECT_DIR$/send_email/generate_read_email.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="564" />
-    <option name="y" value="68" />
+    <option name="x" value="308" />
+    <option name="y" value="50" />
     <option name="width" value="1429" />
     <option name="height" value="838" />
   </component>
@@ -112,10 +122,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="377" y="78" width="1429" height="838" extended-state="0" />
+    <frame x="308" y="50" width="1429" height="838" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25309992" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25309992" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -172,18 +182,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/send_email/function.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="880" column="24" selection-start-line="880" selection-start-column="24" selection-end-line="880" selection-end-column="24" />
-          <folding>
-            <element signature="e#27438#30923#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="205">
+          <caret line="796" lean-forward="true" selection-start-line="796" selection-end-line="796" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/send_email/generate_read_email.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="58" column="86" selection-start-line="58" selection-start-column="86" selection-end-line="58" selection-end-column="86" />
+        <state relative-caret-position="380">
+          <caret line="60" column="52" selection-start-line="60" selection-start-column="52" selection-end-line="60" selection-end-column="52" />
         </state>
       </provider>
     </entry>
