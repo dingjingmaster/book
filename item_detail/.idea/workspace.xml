@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6393b52f-c17b-4fb9-a966-354c257f0c78" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/send_email/function.py" beforeDir="false" afterPath="$PROJECT_DIR$/send_email/function.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/send_email/auto_email.sh" beforeDir="false" afterPath="$PROJECT_DIR$/send_email/auto_email.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,11 +21,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/send_email/function.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="669" column="26" selection-start-line="669" selection-start-column="26" selection-end-line="669" selection-end-column="26" />
+            <state relative-caret-position="405">
+              <caret line="677" column="67" lean-forward="true" selection-start-line="677" selection-start-column="67" selection-end-line="677" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/send_email/auto_email.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -49,12 +58,13 @@
         <option value="$PROJECT_DIR$/bin/item_read.py" />
         <option value="$PROJECT_DIR$/send_email/generate_read_email.py" />
         <option value="$PROJECT_DIR$/send_email/function.py" />
+        <option value="$PROJECT_DIR$/send_email/auto_email.sh" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="293" />
-    <option name="y" value="40" />
+    <option name="x" value="563" />
+    <option name="y" value="149" />
     <option name="width" value="1429" />
     <option name="height" value="872" />
   </component>
@@ -120,7 +130,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="293" y="40" width="1429" height="872" extended-state="0" />
+    <frame x="563" y="149" width="1429" height="872" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25309992" />
@@ -180,8 +190,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/send_email/function.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="669" column="26" selection-start-line="669" selection-start-column="26" selection-end-line="669" selection-end-column="26" />
+        <state relative-caret-position="405">
+          <caret line="677" column="67" lean-forward="true" selection-start-line="677" selection-start-column="67" selection-end-line="677" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/send_email/auto_email.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
         </state>
       </provider>
     </entry>
