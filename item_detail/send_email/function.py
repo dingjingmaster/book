@@ -743,7 +743,7 @@ def free_nomask_num(loglist, freenomasklist):
             , bysbyuusernum, bysbyuchapternum \
             , bysfbyuusernum, bysfbyuchapternum = i
         # 去掉屏蔽书
-        if '1111111111111111' == masklevel:
+        if '1' == masklevel:
             continue
         usernumtemp = int(usernum) + int(bysbyuusernum) + int(bysfbyuusernum)
         userfreetemp = int(chapternum) + int(bysbyuchapternum) + int(bysfbyuchapternum)
