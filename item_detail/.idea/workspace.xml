@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6393b52f-c17b-4fb9-a966-354c257f0c78" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/send_email/function.py" beforeDir="false" afterPath="$PROJECT_DIR$/send_email/function.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/send_email/generate_read_email.py" beforeDir="false" afterPath="$PROJECT_DIR$/send_email/generate_read_email.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chapter_check/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../chapter_check/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/send_email/generate_read_email.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="76" column="11" lean-forward="true" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
+            <state relative-caret-position="158">
+              <caret line="59" column="78" selection-start-line="59" selection-start-column="78" selection-end-line="59" selection-end-column="78" />
             </state>
           </provider>
         </entry>
@@ -46,8 +46,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="332" />
-    <option name="y" value="29" />
+    <option name="x" value="334" />
+    <option name="y" value="57" />
     <option name="width" value="1429" />
     <option name="height" value="838" />
   </component>
@@ -59,7 +59,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -81,10 +80,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="D:/Python27" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../chapter_check" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -113,10 +113,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="332" y="29" width="1429" height="838" extended-state="0" />
-    <editor active="true" />
+    <frame x="48" y="77" width="1429" height="838" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25309992" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2567469" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -180,8 +179,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/send_email/generate_read_email.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="76" column="11" lean-forward="true" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
+        <state relative-caret-position="158">
+          <caret line="59" column="78" selection-start-line="59" selection-start-column="78" selection-end-line="59" selection-end-column="78" />
         </state>
       </provider>
     </entry>
