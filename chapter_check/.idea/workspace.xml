@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="311cabd7-24b5-4690-b87f-1a2e26ff9330" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../item_detail/bin/item_read_deep.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_check.py" beforeDir="false" afterPath="$PROJECT_DIR$/order_check.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../item_detail/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../item_detail/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../item_detail/send_email/function.py" beforeDir="false" afterPath="$PROJECT_DIR$/../item_detail/send_email/function.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../item_detail/send_email/generate_read_email.py" beforeDir="false" afterPath="$PROJECT_DIR$/../item_detail/send_email/generate_read_email.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

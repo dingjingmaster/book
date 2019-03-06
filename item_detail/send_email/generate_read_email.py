@@ -61,7 +61,6 @@ if __name__ == '__main__':
     outBufG += print_list(trueChargeListG,     "cp正版书阅读情况", ("阅读情况", "书籍量", "阅读量", "阅读章节数"))
     outBufG += print_list(freeListG,          "互联网书阅读情况", ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))
     outBufG += print_list(freeListNoMaskG,          "去除屏蔽后互联网书阅读情况", ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))
-    
     outBufG += print_list(chargeListG,          "付费书(去除包月及限免)阅读情况", ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))
     outBufG += print_list(tfListG,      "限免书阅读情况",     ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))
     outBufG += print_list(bysbyuListG,    "包月用户看包月书", ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))
