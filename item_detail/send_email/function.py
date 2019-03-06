@@ -294,6 +294,159 @@ def unmask_fee_flag(logList, unmaskFeeList):
     return unmaskFeeList
 
 
+# 天阅读-互联网书籍阅读分段
+def true_free__num(loglist, truefreelist):
+    truefreebt0t10b = 0                   # 书籍数
+    truefreebt10t100b = 0
+    truefreebt100t1000b = 0
+    truefreebt1000t10000b = 0
+    truefreegt10000b = 0
+    truefreebt0t10u = 0                   # 用户数
+    truefreebt10t100u = 0
+    truefreebt100t1000u = 0
+    truefreebt1000t10000u = 0
+    truefreegt10000u = 0
+    truefreebt0t10c = 0                   # 付费章节
+    truefreebt10t100c = 0
+    truefreebt100t1000c = 0
+    truefreebt1000t10000c = 0
+    truefreegt10000c = 0
+
+    allbook = 0
+    allbookuser = 0
+    allbookchapter = 0
+
+    for i in loglist:
+        gid, name, author, masklevel, feeflag, by, tf, ncp, fc\
+                , usernum, chapternum\
+                , bysbyuusernum, bysbyuchapternum\
+                , bysfbyuusernum, bysfbyuchapternum = i
+        usernumtemp = int(usernum) + int(bysbyuusernum) + int(bysfbyuusernum)
+        usertruefreetemp = int(chapternum) + int(bysbyuchapternum) + int(bysfbyuchapternum)
+        if feeflag != u'1':
+            allbook += 1
+            allbookuser += int(usernumtemp)
+            allbookchapter += int(usertruefreetemp)
+            if int(usernumtemp) > 0 and int(usernumtemp) < 10:
+                truefreebt0t10b += 1
+                truefreebt0t10u += int(usernumtemp)
+                truefreebt0t10c += int(usertruefreetemp)
+            elif int(usernumtemp) >= 10 and int(usernumtemp) < 100:
+                truefreebt10t100b += 1
+                truefreebt10t100u += int(usernumtemp)
+                truefreebt10t100c += int(usertruefreetemp)
+            elif int(usernumtemp) >= 100 and int(usernumtemp) < 1000:
+                truefreebt100t1000b += 1
+                truefreebt100t1000u += int(usernumtemp)
+                truefreebt100t1000c += int(usertruefreetemp)
+            elif int(usernumtemp) >= 1000 and int(usernumtemp) < 10000:
+                truefreebt1000t10000b += 1
+                truefreebt1000t10000u += int(usernumtemp)
+                truefreebt1000t10000c += int(usertruefreetemp)
+            else:
+                truefreegt10000b += 1
+                truefreegt10000u += int(usernumtemp)
+                truefreegt10000c += int(usertruefreetemp)
+    if allbook == 0:
+        allbook = 1
+    if allbookuser == 0:
+        allbookuser = 1
+    if allbookchapter == 0:
+        allbookchapter = 1
+    truefreelist.append(("(0,10)", truefreebt0t10b, float(truefreebt0t10b)/allbook * 100\
+            , truefreebt0t10u, float(truefreebt0t10u)/allbookuser * 100\
+            , truefreebt0t10c, float(truefreebt0t10c)/allbookchapter * 100))
+    truefreelist.append(("[10,100)", truefreebt10t100b, float(truefreebt10t100b)/allbook * 100\
+            , truefreebt10t100u, float(truefreebt10t100u)/allbookuser * 100\
+            , truefreebt10t100c, float(truefreebt10t100c)/allbookchapter * 100))
+    truefreelist.append(("[100,1000)", truefreebt100t1000b, float(truefreebt100t1000b)/allbook * 100\
+            , truefreebt100t1000u, float(truefreebt100t1000u)/allbookuser * 100\
+            , truefreebt100t1000c, float(truefreebt100t1000c)/allbookchapter * 100))
+    truefreelist.append(("[1000,10000)", truefreebt1000t10000b, float(truefreebt1000t10000b)/allbook * 100\
+            , truefreebt1000t10000u, float(truefreebt1000t10000u)/allbookuser * 100\
+            , truefreebt1000t10000c, float(truefreebt1000t10000c)/allbookchapter * 100))
+    truefreelist.append(("[10000, ...)", truefreegt10000b, float(truefreegt10000b)/allbook * 100\
+            , truefreegt10000u, float(truefreegt10000u)/allbookuser * 100\
+            , truefreegt10000c, float(truefreegt10000c)/allbookchapter * 100))
+    return truefreelist
+
+# 天阅读-cp正版书籍阅读分段
+def true_charge__num(loglist, truechargelist):
+    truechargebt0t10b = 0                   # 书籍数
+    truechargebt10t100b = 0
+    truechargebt100t1000b = 0
+    truechargebt1000t10000b = 0
+    truechargegt10000b = 0
+    truechargebt0t10u = 0                   # 用户数
+    truechargebt10t100u = 0
+    truechargebt100t1000u = 0
+    truechargebt1000t10000u = 0
+    truechargegt10000u = 0
+    truechargebt0t10c = 0                   # 付费章节
+    truechargebt10t100c = 0
+    truechargebt100t1000c = 0
+    truechargebt1000t10000c = 0
+    truechargegt10000c = 0
+
+    allbook = 0
+    allbookuser = 0
+    allbookchapter = 0
+
+    for i in loglist:
+        gid, name, author, masklevel, feeflag, by, tf, ncp, fc\
+                , usernum, chapternum\
+                , bysbyuusernum, bysbyuchapternum\
+                , bysfbyuusernum, bysfbyuchapternum = i
+        usernumtemp = int(usernum) + int(bysbyuusernum) + int(bysfbyuusernum)
+        usertruechargetemp = int(chapternum) + int(bysbyuchapternum) + int(bysfbyuchapternum)
+        if feeflag == u'1':
+            allbook += 1
+            allbookuser += int(usernumtemp)
+            allbookchapter += int(usertruechargetemp)
+            if int(usernumtemp) > 0 and int(usernumtemp) < 10:
+                truechargebt0t10b += 1
+                truechargebt0t10u += int(usernumtemp)
+                truechargebt0t10c += int(usertruechargetemp)
+            elif int(usernumtemp) >= 10 and int(usernumtemp) < 100:
+                truechargebt10t100b += 1
+                truechargebt10t100u += int(usernumtemp)
+                truechargebt10t100c += int(usertruechargetemp)
+            elif int(usernumtemp) >= 100 and int(usernumtemp) < 1000:
+                truechargebt100t1000b += 1
+                truechargebt100t1000u += int(usernumtemp)
+                truechargebt100t1000c += int(usertruechargetemp)
+            elif int(usernumtemp) >= 1000 and int(usernumtemp) < 10000:
+                truechargebt1000t10000b += 1
+                truechargebt1000t10000u += int(usernumtemp)
+                truechargebt1000t10000c += int(usertruechargetemp)
+            else:
+                truechargegt10000b += 1
+                truechargegt10000u += int(usernumtemp)
+                truechargegt10000c += int(usertruechargetemp)
+    if allbook == 0:
+        allbook = 1
+    if allbookuser == 0:
+        allbookuser = 1
+    if allbookchapter == 0:
+        allbookchapter = 1
+    truechargelist.append(("(0,10)", truechargebt0t10b, float(truechargebt0t10b)/allbook * 100\
+            , truechargebt0t10u, float(truechargebt0t10u)/allbookuser * 100\
+            , truechargebt0t10c, float(truechargebt0t10c)/allbookchapter * 100))
+    truechargelist.append(("[10,100)", truechargebt10t100b, float(truechargebt10t100b)/allbook * 100\
+            , truechargebt10t100u, float(truechargebt10t100u)/allbookuser * 100\
+            , truechargebt10t100c, float(truechargebt10t100c)/allbookchapter * 100))
+    truechargelist.append(("[100,1000)", truechargebt100t1000b, float(truechargebt100t1000b)/allbook * 100\
+            , truechargebt100t1000u, float(truechargebt100t1000u)/allbookuser * 100\
+            , truechargebt100t1000c, float(truechargebt100t1000c)/allbookchapter * 100))
+    truechargelist.append(("[1000,10000)", truechargebt1000t10000b, float(truechargebt1000t10000b)/allbook * 100\
+            , truechargebt1000t10000u, float(truechargebt1000t10000u)/allbookuser * 100\
+            , truechargebt1000t10000c, float(truechargebt1000t10000c)/allbookchapter * 100))
+    truechargelist.append(("[10000, ...)", truechargegt10000b, float(truechargegt10000b)/allbook * 100\
+            , truechargegt10000u, float(truechargegt10000u)/allbookuser * 100\
+            , truechargegt10000c, float(truechargegt10000c)/allbookchapter * 100))
+    return truechargelist
+
+
 def tf_num(logList, tfList):
     tfBt0t10b = 0                   # 书籍数
     tfBt10t100b = 0
