@@ -8,6 +8,7 @@ from CharacterTransInt import CharacterTransInt
 
 """
     输入的数据格式： {]gid{]章节1{]章节2{].....
+    为了xx章xx节类型的数据，统一归一为 第xx部 第xx章
 """
 
 if __name__ == '__main__':

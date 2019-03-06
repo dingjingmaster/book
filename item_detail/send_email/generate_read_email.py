@@ -36,7 +36,6 @@ if __name__ == '__main__':
     # 去掉屏蔽书，免费书的情况
     freeListNoMaskG = []
     trueChargeListG = []                        # cp书籍订阅量分段
-    trueFreeListG = []                          # 互联网书籍订阅量分段
 
     ##
     parse_info(logPath, logListG)
@@ -46,7 +45,6 @@ if __name__ == '__main__':
     unmask_fee_flag(logListG, unmaskFeeListG)
     month_num(logListG, bysbyuListG, bysfbyuListG, monthListG)
     true_charge__num(logListG, trueChargeListG)
-    true_free__num(logListG, trueFreeListG)
     charge_num(logListG, chargeListG)                           # 付费情况
     free_num(logListG, freeListG)                               # 免费书情况
     free_nomask_num(logListG, freeListNoMaskG)                  # 去除屏蔽的免费书阅读情况
@@ -57,14 +55,14 @@ if __name__ == '__main__':
     cpListG = cp_top(logListG, cpListG)
 
     outBufG += print_list(ifmaskListG,            "屏蔽情况", ("屏蔽/非屏蔽", "书籍量", "阅读量", "阅读章节数"))
-    outBufG += print_list(unmaskFeeListG, "非屏蔽书阅读情况", ("付费情况", "书籍量", "阅读量", "阅读章节数"))
-    outBufG += print_list(maskFeeListG,     "屏蔽书阅读情况", ("付费情况", "书籍量", "阅读量", "阅读章节数"))
+    outBufG += print_list(unmaskFeeListG, "非屏蔽书阅读情况", ("阅读情况", "书籍量", "阅读量", "阅读章节数"))
+    outBufG += print_list(maskFeeListG,     "屏蔽书阅读情况", ("阅读情况", "书籍量", "阅读量", "阅读章节数"))
 
-    outBufG += print_list(trueFreeListG,     "纯互联网书阅读情况", ("阅读情况", "书籍量", "阅读量", "阅读章节数"))
     outBufG += print_list(trueChargeListG,     "cp正版书阅读情况", ("阅读情况", "书籍量", "阅读量", "阅读章节数"))
-    outBufG += print_list(chargeListG,          "付费书情况", ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))
-    outBufG += print_list(freeListG,          "免费书情况", ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))
-    outBufG += print_list(freeListNoMaskG,          "去除屏蔽后免费书情况", ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))
+    outBufG += print_list(freeListG,          "互联网书阅读情况", ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))
+    outBufG += print_list(freeListNoMaskG,          "去除屏蔽后互联网书阅读情况", ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))
+    
+    outBufG += print_list(chargeListG,          "付费书(去除包月及限免)阅读情况", ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))
     outBufG += print_list(tfListG,      "限免书阅读情况",     ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))
     outBufG += print_list(bysbyuListG,    "包月用户看包月书", ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))
     outBufG += print_list(bysfbyuListG, "非包月用户看包月书", ("阅读量分段", "书籍量", "阅读量", "阅读章节数"))
