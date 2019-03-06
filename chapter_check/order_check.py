@@ -39,8 +39,7 @@ if __name__ == '__main__':
             else:
                 status = '连载'
             top10000Dict[arr[0]] = status
-    with open(work_dir + '/resource/charge_chapter.txt',
-              'r', encoding='utf8') as fr:
+    with open(work_dir + '/resource/charge_chapter.txt', 'r', encoding='utf8') as fr:
         for line in fr.readlines():
             """ 每一行代表一本小说 """
             line = line.strip()
@@ -52,32 +51,38 @@ if __name__ == '__main__':
             if gid not in top10000Dict:
                 continue
             for cp in arr[1:]:
-                cp_info = cn.chapter_index_str(cp)
-                if '' == cp_info:
-                    debug_fw.write(cp + '\t' + '1' + '\n')
-                    continue
-                cpint = ci.chinese_to_arabic(cp_info)
-                if (cpint in filter) or (cpint == 0):
-                    continue
-                filter[cpint] = 0
-                chapter_index_list.append(cpint)
+                for cp_index in cn.chapter_index_str(cp):
+                    arr = cp_index.split('_')
+                    if len(arr) < 2:
+                        debug_fw.write(cp + '\t' + cp_index + '\n')
+                        continue
+                    cpInt0 = ci.chinese_to_arabic(arr[0])
+                    cpInt1 = ci.chinese_to_arabic(arr[1])
+                    cpinfo = str(cpInt0) + '_' + str(cpInt1)
+                    if cpinfo in filter or cpInt1 == 0:
+                        continue
+                    filter[cpinfo] = 0
+                    chapter_index_list.append((cpInt0, cpInt1))
             """ 检查是否缺章 """
             chapter_length = len(chapter_index_list)
             if chapter_length > 1:
-                chapter_index_list.sort()
-                if chapter_length == chapter_index_list[chapter_length - 1]:
-                    rightNum += 1
-                    right_fw.write(gid + '\n')
-                else:
-                    wrongNum += 1
-                    index = 1
-                    for ik in chapter_index_list:
-                        if ik == index:
-                            index += 1
-                            continue
-                        lack_chapter = str(index)
-                        break
-                    wrong_fw.write(gid + '\t' + top10000Dict[gid] + '\t' + lack_chapter + '\n')
+                chapter_index_list.sort(key=lambda x: (x[0], x[1]))
+                # 第 xx 章的情况
+                if chapter_index_list[chapter_length - 1][0] == 0:
+                    if chapter_length == chapter_index_list[chapter_length - 1][1]:
+                        rightNum += 1
+                        right_fw.write(gid + '\n')
+                    else:
+                        wrongNum += 1
+                        index = 1
+                        for ik in chapter_index_list:
+                            t1, t2 = ik
+                            if t2 == index:
+                                index += 1
+                                continue
+                            lack_chapter = str(index)
+                            break
+                        wrong_fw.write(gid + '\t' + top10000Dict[gid] + '\t' + lack_chapter + '\n')
             else:
                 left_fw.write(line + '\n')
                 leftNum += 1
