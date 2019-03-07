@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb3d1659-cdad-43b5-b13c-883f0f9cfd69" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/union/union.py" beforeDir="false" afterPath="$PROJECT_DIR$/union/union.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sim/chapter_dispose/white_list/white_list_substr.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sim/chapter_dispose/white_list/white_list_substr.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,7 +12,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/union/union.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="271">
@@ -23,6 +23,15 @@
                 <element signature="e#1020#1696#0" expanded="true" />
                 <element signature="e#1726#2700#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sim/chapter_dispose/white_list/white_list_substr.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -82,12 +91,13 @@
         <option value="$PROJECT_DIR$/union/union_sim.py" />
         <option value="$PROJECT_DIR$/item_norm.sh" />
         <option value="$PROJECT_DIR$/union/union.py" />
+        <option value="$PROJECT_DIR$/sim/chapter_dispose/white_list/white_list_substr.txt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="18" />
-    <option name="y" value="48" />
+    <option name="x" value="643" />
+    <option name="y" value="99" />
     <option name="width" value="1429" />
     <option name="height" value="872" />
   </component>
@@ -106,6 +116,24 @@
             <path>
               <item name="item_norm" type="b2602c69:ProjectViewProjectNode" />
               <item name="item_norm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="item_norm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="item_norm" type="462c0819:PsiDirectoryNode" />
+              <item name="sim" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="item_norm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="item_norm" type="462c0819:PsiDirectoryNode" />
+              <item name="sim" type="462c0819:PsiDirectoryNode" />
+              <item name="chapter_dispose" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="item_norm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="item_norm" type="462c0819:PsiDirectoryNode" />
+              <item name="sim" type="462c0819:PsiDirectoryNode" />
+              <item name="chapter_dispose" type="462c0819:PsiDirectoryNode" />
+              <item name="white_list" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="item_norm" type="b2602c69:ProjectViewProjectNode" />
@@ -181,7 +209,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="18" y="48" width="1429" height="872" extended-state="0" />
+    <frame x="643" y="99" width="1429" height="872" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22902991" />
@@ -264,6 +292,13 @@
             <element signature="e#1020#1696#0" expanded="true" />
             <element signature="e#1726#2700#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sim/chapter_dispose/white_list/white_list_substr.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
         </state>
       </provider>
     </entry>
