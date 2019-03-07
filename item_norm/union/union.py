@@ -75,10 +75,10 @@ def out_sim_rule(mpath, ruleDict, simDict, simGroup, itemInfo):
 	""" 整合相似度 """
 	for ik, iv in simDict.items():
 		if ik in resultDict:
-			resultDict[ik] |= simDict[ik]
+			resultDict[ik] |= iv
 	filter = {}
 	for ik, iv in resultDict.items():
-		ml = list(iv)
+		ml = list(set(iv))
 		ml.sort()
 		filter['|'.join(ml)] = 0
 	# 输出结果
@@ -88,12 +88,14 @@ def out_sim_rule(mpath, ruleDict, simDict, simGroup, itemInfo):
 			arr = ik.split('|')
 			tgid, name, author, series = '', '', '', ''
 			for igid in arr:
-				if igid in simGroup:
-					tgid = igid
+				if (igid in simGroup) and (igid in itemInfoDict):
+					tgid = simGroup[igid]
 					break
 			if '' != tgid:
 				mfee, mview, name, author, series = itemInfoDict[tgid]
 				for ig in arr:
+					if ig in allGid:
+						continue
 					allGid[ig] = 0
 					fw.write(ig + '\t' + name + '\t' + author + '\t' + series + '\n')
 		# 未成对 或 规则的输出
