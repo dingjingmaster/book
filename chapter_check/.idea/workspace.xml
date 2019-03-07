@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="311cabd7-24b5-4690-b87f-1a2e26ff9330" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/chapter_check.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/chapter_check.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/GetChapterName.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/GetChapterName.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_check.py" beforeDir="false" afterPath="$PROJECT_DIR$/order_check.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../item_detail/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../item_detail/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +15,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/order_check.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-208">
-              <caret line="56" column="37" lean-forward="true" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
+            <state relative-caret-position="1113">
+              <caret line="56" column="37" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -29,13 +24,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/GetChapterName.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="62" column="16" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
+            <state relative-caret-position="1010">
+              <caret line="66" column="23" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
               <folding>
                 <element signature="e#58#153#1" expanded="true" />
-                <element signature="e#1239#1808#0" expanded="true" />
-                <element signature="e#3611#4271#0" expanded="true" />
-                <element signature="e#4330#6636#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,8 +64,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="171" />
-    <option name="y" value="85" />
+    <option name="x" value="267" />
+    <option name="y" value="52" />
     <option name="width" value="1664" />
     <option name="height" value="953" />
   </component>
@@ -85,6 +77,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -101,11 +94,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../item_norm" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -220,15 +212,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="171" y="85" width="1664" height="953" extended-state="0" />
+    <frame x="267" y="52" width="1664" height="953" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18991283" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19178082" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32806805" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37424058" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.37424058" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -271,14 +263,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resource/chapter_left.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
       <provider editor-type-id="LargeFileEditor">
         <state relative-caret-position="323">
           <caret line="95" column="39" selection-start-line="95" selection-start-column="39" selection-end-line="95" selection-end-column="39" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
@@ -297,12 +289,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resource/chapter_wrong.txt">
-      <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="LargeFileEditor">
         <state>
           <caret column="82" selection-start-column="82" selection-end-column="82" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/resource/top1000.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -323,20 +315,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/order_check.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-208">
-          <caret line="56" column="37" lean-forward="true" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
+        <state relative-caret-position="1113">
+          <caret line="56" column="37" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/GetChapterName.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="62" column="16" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
+        <state relative-caret-position="1010">
+          <caret line="66" column="23" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
           <folding>
             <element signature="e#58#153#1" expanded="true" />
-            <element signature="e#1239#1808#0" expanded="true" />
-            <element signature="e#3611#4271#0" expanded="true" />
-            <element signature="e#4330#6636#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -65,10 +65,10 @@ then
 #python2 ${workPath}/rule/bin/norm_title_author.py ${getNameAuthor} ${ruleWhiteList} ${ruleResult1}
 #python2 ${workPath}/rule/bin/norm_series.py "${seriesWhiteList}" ${ruleResult1} ${ruleResult}
 
-cd ${workPath}/sim/chapter_dispose
-rm libs.zip
-zip -r ./libs.zip ./*
-spark-submit --py-files libs.zip dispose_chapter.py "${whiteGid}" "${whitePair}" "${whiteSubstr}" "${chargeChapter}" "${freeChapter}" "${itemInfo}" "${chapterPath}"
+#cd ${workPath}/sim/chapter_dispose
+#rm libs.zip
+#zip -r ./libs.zip ./*
+#spark-submit --py-files libs.zip dispose_chapter.py "${whiteGid}" "${whitePair}" "${whiteSubstr}" "${chargeChapter}" "${freeChapter}" "${itemInfo}" "${chapterPath}"
 #cd ${workPath}
 #hadoop fs -cat "${chapterPath}/*" | awk -F'\t' '{print $1}' > "${allgidsPath}"
 
@@ -80,9 +80,9 @@ spark-submit --py-files libs.zip dispose_chapter.py "${whiteGid}" "${whitePair}"
 #cd ${workPath}/sim/calc_similarity/
 #spark-submit ${sparkConf} "${globalSavePath}"
 
-#cd ${workPath}/union
-#hadoop fs -cat "${globalSavePath}/sim_result/*" > "${simResult}"
-#python2 union2.py "${ruleResult}" "${simResult}" "${finallyResult}"
+cd ${workPath}/union
+hadoop fs -cat "${globalSavePath}/sim_result/*" | awk -F'\t' '{if($3>=0.5) print $1"\t"$2"\t"$3}' > "${simResult}"
+python2 union2.py "${ruleResult}" "${simResult}" "${finallyResult}"
 
 #cd ${workPath}
 #hdfs_exist "${globalSavePath}/sim_result/"

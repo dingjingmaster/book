@@ -1,9 +1,9 @@
-#!/usr/bin/env python3.6
+#!/usr/bin/env python
 # -*- coding=utf-8 -*-
 import sys
 
 
-def get_item_info(itemInfoPath: str, itemInfoDict: dict, ruleResultDict: dict):
+def get_item_info(itemInfoPath, itemInfoDict, ruleResultDict):
 	with open(itemInfoPath, 'r', encoding='utf8') as fr:
 		for line in fr.readlines():
 			line = line.strip()
@@ -40,7 +40,7 @@ def get_sim_result(mpath: str, mdict: dict):
 	return
 
 
-def chose_sim_result(itemInfoDict: dict, simDict: dict, simGroup: dict):
+def chose_sim_result(itemInfoDict, simDict, simGroup):
 	for gid, iv in simDict.items():
 		if gid not in itemInfoDict:
 			continue
@@ -67,7 +67,7 @@ def chose_sim_result(itemInfoDict: dict, simDict: dict, simGroup: dict):
 	return
 
 
-def out__sim_rule(mpath: str, ruleDict: dict, simDict: dict, simGroup: dict, itemInfo: dict):
+def out__sim_rule(mpath, ruleDict, simDict, simGroup, itemInfo):
 	resultDict = {}
 	for ik, iv in ruleDict.items():
 		resultDict[ik] = iv
