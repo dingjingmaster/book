@@ -67,10 +67,12 @@ def chose_sim_result(itemInfoDict, simDict, simGroup):
 	return
 
 
-def out__sim_rule(mpath, ruleDict, simDict, simGroup, itemInfo):
+def out_sim_rule(mpath, ruleDict, simDict, simGroup, itemInfo):
 	resultDict = {}
 	for ik, iv in ruleDict.items():
-		resultDict[ik] = iv
+		for gid in iv:
+			resultDict[gid] = iv
+	""" 整合相似度 """
 	for ik, iv in simDict.items():
 		if ik in resultDict:
 			resultDict[ik] |= simDict[ik]
@@ -124,10 +126,10 @@ if __name__ == '__main__':
 	itemInfoDict = {}
 	simResultDict = {}
 	ruleResultDict = {}
-	simGidMapping = {}
+	simGidMapping = {}                                                  # 为每个相似度结果选中一个 gid
 
 	get_item_info(itemInfoPath, itemInfoDict, ruleResultDict)           # 读取物品信息 + 规则归一结果
 	get_sim_result(simResultPath, simResultDict)                        # 读取相似度归一结果
 	chose_sim_result(itemInfoDict, simResultDict, simGidMapping)        # 相似度归一结果整理
-	out__sim_rule(simGroupResultPath, ruleResultDict, simResultDict, simGidMapping, itemInfoDict)
+	out_sim_rule(simGroupResultPath, ruleResultDict, simResultDict, simGidMapping, itemInfoDict)
 	exit(0)
