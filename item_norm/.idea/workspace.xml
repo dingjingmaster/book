@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb3d1659-cdad-43b5-b13c-883f0f9cfd69" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/sim/chapter_dispose/white_list/white_list_substr.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sim/chapter_dispose/white_list/white_list_substr.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/union/union.py" beforeDir="false" afterPath="$PROJECT_DIR$/union/union.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,60 +12,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/union/union.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
+            <state relative-caret-position="182">
+              <caret line="79" column="35" selection-start-line="79" selection-start-column="35" selection-end-line="79" selection-end-column="35" />
               <folding>
-                <element signature="e#142#633#0" expanded="true" />
-                <element signature="e#682#943#0" expanded="true" />
-                <element signature="e#1020#1696#0" expanded="true" />
-                <element signature="e#1726#2700#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sim/chapter_dispose/white_list/white_list_substr.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/item_norm.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="77" column="54" lean-forward="true" selection-start-line="77" selection-start-column="54" selection-end-line="77" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="1113">
-                <caret line="53" column="31" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/union/union2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="158" selection-start-line="158" selection-end-line="158" />
-              <folding>
-                <element signature="e#2144#4661#0" expanded="true" />
-                <element signature="e#2901#2931#0" expanded="true" />
+                <element signature="e#2894#3724#0" />
               </folding>
             </state>
           </provider>
@@ -90,14 +45,14 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/union/union_sim.py" />
         <option value="$PROJECT_DIR$/item_norm.sh" />
-        <option value="$PROJECT_DIR$/union/union.py" />
         <option value="$PROJECT_DIR$/sim/chapter_dispose/white_list/white_list_substr.txt" />
+        <option value="$PROJECT_DIR$/union/union.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="643" />
-    <option name="y" value="99" />
+    <option name="x" value="165" />
+    <option name="y" value="182" />
     <option name="width" value="1429" />
     <option name="height" value="872" />
   </component>
@@ -109,7 +64,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -120,30 +74,13 @@
             <path>
               <item name="item_norm" type="b2602c69:ProjectViewProjectNode" />
               <item name="item_norm" type="462c0819:PsiDirectoryNode" />
-              <item name="sim" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="item_norm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="item_norm" type="462c0819:PsiDirectoryNode" />
-              <item name="sim" type="462c0819:PsiDirectoryNode" />
-              <item name="chapter_dispose" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="item_norm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="item_norm" type="462c0819:PsiDirectoryNode" />
-              <item name="sim" type="462c0819:PsiDirectoryNode" />
-              <item name="chapter_dispose" type="462c0819:PsiDirectoryNode" />
-              <item name="white_list" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="item_norm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="item_norm" type="462c0819:PsiDirectoryNode" />
               <item name="union" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -209,10 +146,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="643" y="99" width="1429" height="872" extended-state="0" />
+    <frame x="165" y="182" width="1429" height="872" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22902991" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23194748" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -254,10 +191,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sim/chapter_dispose/white_list/white_list_substr.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/item_norm.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="77" column="54" lean-forward="true" selection-start-line="77" selection-start-column="54" selection-end-line="77" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="1113">
+          <first_editor relative-caret-position="406">
             <caret line="53" column="31" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
           </first_editor>
           <second_editor />
@@ -275,30 +226,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/item_norm.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="77" column="54" lean-forward="true" selection-start-line="77" selection-start-column="54" selection-end-line="77" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/union/union.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
+        <state relative-caret-position="182">
+          <caret line="79" column="35" selection-start-line="79" selection-start-column="35" selection-end-line="79" selection-end-column="35" />
           <folding>
-            <element signature="e#142#633#0" expanded="true" />
-            <element signature="e#682#943#0" expanded="true" />
-            <element signature="e#1020#1696#0" expanded="true" />
-            <element signature="e#1726#2700#0" expanded="true" />
+            <element signature="e#2894#3724#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sim/chapter_dispose/white_list/white_list_substr.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
         </state>
       </provider>
     </entry>

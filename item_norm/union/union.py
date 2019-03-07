@@ -76,6 +76,8 @@ def out_sim_rule(mpath, ruleDict, simDict, simGroup, itemInfo):
 	for ik, iv in simDict.items():
 		if ik in resultDict:
 			resultDict[ik] |= iv
+		else:
+			resultDict[ik] = set(iv)
 	filter = {}
 	for ik, iv in resultDict.items():
 		ml = list(set(iv))
