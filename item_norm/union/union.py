@@ -29,30 +29,29 @@ def get_item_info(itemInfoPath, itemInfoDict, ruleResultDict):
 	return
 
 
-def get_sim_result(mpath: str, mdict: dict):
+def get_sim_result(mpath, mdict):
+	tmpDict = {}
 	with open(mpath, 'r', encoding='utf8') as fr:
 		for line in fr.readlines():
 			line = line.strip()
 			arr = line.split('\t')
-			targid = ''
-			maxlen = 0
 			for i in arr[:2]:
-				ls = len(mdict[i])
-				if (i in mdict) and (maxlen <= ls):
-					maxlen = ls
-					targid = i
-			if '' == targid:
-				for gid in arr[:2]:
-					mdict[gid] = set(arr[:2])
-			else:
-				for gid in arr[:2]:
-					mdict[gid] = mdict[targid] | set(arr[:2])
+				if i in tmpDict:
+					tmpDict[i] |= set(arr[:2])
+				else:
+					tmpDict[i] = set(arr[:2])
+	for ik, iv in tmpDict.items():
+		tmp = set()
+		for i in iv:
+			tmp |= tmpDict[i]
+		for i in tmp:
+			mdict[i] = tmp
 	return
 
 
 def chose_sim_result(itemInfoDict, simDict, simGroup):
 	for gid, iv in simDict.items():
-		if gid not in itemInfoDict:
+		if (gid not in itemInfoDict) or (gid in simGroup):
 			continue
 		choseCharge = ('', 0)           # gid view
 		choseFree = ('', 0)             # gid view
@@ -85,15 +84,20 @@ def out_sim_rule(mpath, ruleDict, simDict, simGroup, itemInfo):
 				resultDict[gid] = iv
 	""" 整合相似度 """
 	for ik, iv in simDict.items():
+		tmp = set()
 		if ik in resultDict:
-			resultDict[ik] |= iv
-		else:
-			resultDict[ik] = set(iv)
+			tmp = resultDict[ik] | iv
+		for i in tmp:
+			resultDict[i] = tmp
 	filter = {}
 	for ik, iv in resultDict.items():
 		ml = list(set(iv))
 		ml.sort()
 		filter['|'.join(ml)] = 0
+	# 输出组数
+	with open('../finally_group.txt', 'w', encoding='utf8') as fw:
+		for ik, iv in filter.items():
+			fw.write(ik + '\n')
 	# 输出结果
 	allGid = {}
 	with open(mpath, 'w', encoding='utf8') as fw:
@@ -103,8 +107,6 @@ def out_sim_rule(mpath, ruleDict, simDict, simGroup, itemInfo):
 			for igid in arr:
 				if (igid in simGroup) and (igid in itemInfoDict):
 					tgid = simGroup[igid]
-					if igid == 'i_100184072':
-						print ('|'.join(arr))
 					break
 			if '' != tgid:
 				mfee, mview, name, author, series = itemInfoDict[tgid]
