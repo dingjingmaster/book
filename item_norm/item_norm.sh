@@ -50,48 +50,43 @@ then
     rm ./target -fr
     rm ./project -fr
 fi
-
 d1=`date`
-
-
 if true
 then
+rm -fr "${workPath}/resource"
+mkdir "${workPath}/resource"
+hadoop fs -cat "${itemInfo}*" | awk -F'\t' '{print $1"\t"$31"\t"$25"\t"$3"\t"$9}' > "${getNameAuthor}"
+hadoop fs -cat "${itemInfo}*" | awk -F'\t' '{if ($51 != "111111111") print $1"\t"$5"\t"$11}' > ${localItemInfo}
+hadoop fs -mkdir -p "${hadoopMaybeSim}"
+python2 ${workPath}/rule/bin/norm_title_author.py ${getNameAuthor} ${ruleWhiteList} ${ruleResult1}
+python2 ${workPath}/rule/bin/norm_series.py "${seriesWhiteList}" ${ruleResult1} ${ruleResult}
 
-#rm -fr "${workPath}/resource"
-#mkdir "${workPath}/resource"
-#hadoop fs -cat "${itemInfo}*" | awk -F'\t' '{print $1"\t"$31"\t"$25"\t"$3"\t"$9}' > "${getNameAuthor}"
-#hadoop fs -cat "${itemInfo}*" | awk -F'\t' '{if ($51 != "111111111") print $1"\t"$5"\t"$11}' > ${localItemInfo}
-#hadoop fs -mkdir -p "${hadoopMaybeSim}"
-#python2 ${workPath}/rule/bin/norm_title_author.py ${getNameAuthor} ${ruleWhiteList} ${ruleResult1}
-#python2 ${workPath}/rule/bin/norm_series.py "${seriesWhiteList}" ${ruleResult1} ${ruleResult}
+cd ${workPath}/sim/chapter_dispose
+rm libs.zip
+zip -r ./libs.zip ./*
+spark-submit --py-files libs.zip dispose_chapter.py "${whiteGid}" "${whitePair}" "${whiteSubstr}" "${chargeChapter}" "${freeChapter}" "${itemInfo}" "${chapterPath}"
+cd ${workPath}
+hadoop fs -cat "${chapterPath}/*" | awk -F'\t' '{print $1}' > "${allgidsPath}"
 
-#cd ${workPath}/sim/chapter_dispose
-#rm libs.zip
-#zip -r ./libs.zip ./*
-#spark-submit --py-files libs.zip dispose_chapter.py "${whiteGid}" "${whitePair}" "${whiteSubstr}" "${chargeChapter}" "${freeChapter}" "${itemInfo}" "${chapterPath}"
-#cd ${workPath}
-#hadoop fs -cat "${chapterPath}/*" | awk -F'\t' '{print $1}' > "${allgidsPath}"
+cd ${workPath}/sim/esti_simarity
+go build ./src/main/main.go
+./main "${workPath}/sim/esti_simarity/"
+hadoop fs -put "${localMaybeSim}" "${hadoopMaybeSim}"
 
-#cd ${workPath}/sim/esti_simarity
-#go build ./src/main/main.go
-#./main "${workPath}/sim/esti_simarity/"
-#hadoop fs -put "${localMaybeSim}" "${hadoopMaybeSim}"
-
-#cd ${workPath}/sim/calc_similarity/
-#spark-submit ${sparkConf} "${globalSavePath}"
+cd ${workPath}/sim/calc_similarity/
+spark-submit ${sparkConf} "${globalSavePath}"
 
 cd ${workPath}/union
 hadoop fs -cat "${globalSavePath}/sim_result/*" | awk -F'\t' '{if($3>=0.5) print $1"\t"$2"\t"$3}' > "${simResult}"
 python2 union2.py "${ruleResult}" "${simResult}" "${finallyResult}"
 
-#cd ${workPath}
-#hdfs_exist "${globalSavePath}/sim_result/"
-#if [ $? -eq 0 ]
-#then
-#    java -jar jar/InjectNormNameAuthor.jar "${finallyResult}" "${log}" "${tableName}"
-#fi
+cd ${workPath}
+hdfs_exist "${globalSavePath}/sim_result/"
+if [ $? -eq 0 ]
+then
+    java -jar jar/InjectNormNameAuthor.jar "${finallyResult}" "${log}" "${tableName}"
 fi
-
+fi
 d2=`date`
 echo $d1
 echo $d2
