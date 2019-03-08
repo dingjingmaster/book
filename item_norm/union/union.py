@@ -19,9 +19,7 @@ def get_item_info(itemInfoPath, itemInfoDict, ruleResultDict):
 			key = name + '|' + author
 			itemInfoDict[gid] = (fee, view, name, author, series)
 			if key in ruleResultDict:
-				m = ruleResultDict[key]
-				m.add(gid)
-				ruleResultDict[key]= m
+				ruleResultDict[key].add(gid)
 			else:
 				m = set()
 				m.add(gid)
@@ -84,9 +82,9 @@ def out_sim_rule(mpath, ruleDict, simDict, simGroup, itemInfo):
 				resultDict[gid] = iv
 	""" 整合相似度 """
 	for ik, iv in simDict.items():
-		tmp = set()
+		tmp = set(iv)
 		if ik in resultDict:
-			tmp = resultDict[ik] | iv
+			tmp |= resultDict[ik]
 		for i in tmp:
 			resultDict[i] = tmp
 	filter = {}
@@ -105,18 +103,18 @@ def out_sim_rule(mpath, ruleDict, simDict, simGroup, itemInfo):
 			arr = ik.split('|')
 			tgid, name, author, series = '', '', '', ''
 			for igid in arr:
-				if (igid in simGroup) and (igid in itemInfoDict):
+				if (igid in simGroup) and (igid in itemInfo):
 					tgid = simGroup[igid]
 					break
 			if '' != tgid:
-				mfee, mview, name, author, series = itemInfoDict[tgid]
+				mfee, mview, name, author, series = itemInfo[tgid]
 				for ig in arr:
 					if ig in allGid:
 						continue
 					allGid[ig] = 0
 					fw.write(ig + '\t' + name + '\t' + author + '\t' + series + '\n')
 		# 未成对 或 规则的输出
-		for ik, iv in itemInfoDict.items():
+		for ik, iv in itemInfo.items():
 			if ik in allGid:
 				continue
 			allGid[ik] = 0
@@ -150,6 +148,6 @@ if __name__ == '__main__':
 	get_item_info(itemInfoPath, itemInfoDict, ruleResultDict)           # 读取物品信息 + 规则归一结果
 	get_sim_result(simResultPath, simResultDict)                        # 读取相似度归一结果
 	chose_sim_result(itemInfoDict, simResultDict, simGidMapping)        # 相似度归一结果整理
-	ruleResultDict = []
+	ruleResultDict = {}
 	out_sim_rule(simGroupResultPath, ruleResultDict, simResultDict, simGidMapping, itemInfoDict)
 	exit(0)
