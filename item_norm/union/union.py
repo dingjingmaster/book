@@ -19,7 +19,9 @@ def get_item_info(itemInfoPath, itemInfoDict, ruleResultDict):
 			key = name + '|' + author
 			itemInfoDict[gid] = (fee, view, name, author, series)
 			if key in ruleResultDict:
-				ruleResultDict[key].add(gid)
+				m = ruleResultDict[key]
+				m.add(gid)
+				ruleResultDict[key]= m
 			else:
 				m = set()
 				m.add(gid)
@@ -32,11 +34,19 @@ def get_sim_result(mpath: str, mdict: dict):
 		for line in fr.readlines():
 			line = line.strip()
 			arr = line.split('\t')
-			for gid in arr[:2]:
-				if gid in mdict:
-					mdict[gid] = mdict[gid] | set(arr[:2])
-				else:
+			targid = ''
+			maxlen = 0
+			for i in arr[:2]:
+				ls = len(mdict[i])
+				if (i in mdict) and (maxlen <= ls):
+					maxlen = ls
+					targid = i
+			if '' == targid:
+				for gid in arr[:2]:
 					mdict[gid] = set(arr[:2])
+			else:
+				for gid in arr[:2]:
+					mdict[gid] = mdict[targid] | set(arr[:2])
 	return
 
 
@@ -70,8 +80,9 @@ def chose_sim_result(itemInfoDict, simDict, simGroup):
 def out_sim_rule(mpath, ruleDict, simDict, simGroup, itemInfo):
 	resultDict = {}
 	for ik, iv in ruleDict.items():
-		for gid in iv:
-			resultDict[gid] = iv
+		if len(iv) >= 2:
+			for gid in iv:
+				resultDict[gid] = iv
 	""" 整合相似度 """
 	for ik, iv in simDict.items():
 		if ik in resultDict:
@@ -92,6 +103,8 @@ def out_sim_rule(mpath, ruleDict, simDict, simGroup, itemInfo):
 			for igid in arr:
 				if (igid in simGroup) and (igid in itemInfoDict):
 					tgid = simGroup[igid]
+					if igid == 'i_100184072':
+						print ('|'.join(arr))
 					break
 			if '' != tgid:
 				mfee, mview, name, author, series = itemInfoDict[tgid]
