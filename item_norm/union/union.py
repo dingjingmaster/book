@@ -150,5 +150,6 @@ if __name__ == '__main__':
 	get_item_info(itemInfoPath, itemInfoDict, ruleResultDict)           # 读取物品信息 + 规则归一结果
 	get_sim_result(simResultPath, simResultDict)                        # 读取相似度归一结果
 	chose_sim_result(itemInfoDict, simResultDict, simGidMapping)        # 相似度归一结果整理
+	ruleResultDict = []
 	out_sim_rule(simGroupResultPath, ruleResultDict, simResultDict, simGidMapping, itemInfoDict)
 	exit(0)
