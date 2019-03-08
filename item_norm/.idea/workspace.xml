@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb3d1659-cdad-43b5-b13c-883f0f9cfd69" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/union/union.py" beforeDir="false" afterPath="$PROJECT_DIR$/union/union.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/check/norm_top100.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,15 +13,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/union/union.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/check/norm_top100.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="92" column="17" lean-forward="true" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="17" />
-              <folding>
-                <element signature="e#688#1065#0" expanded="true" />
-                <element signature="e#1124#1823#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="103">
+              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resource/check_top100.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4">
+              <caret line="603" column="18" lean-forward="true" selection-start-line="603" selection-start-column="18" selection-end-line="603" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -47,12 +53,14 @@
         <option value="$PROJECT_DIR$/sim/chapter_dispose/white_list/white_list_substr.txt" />
         <option value="$PROJECT_DIR$/item_norm.sh" />
         <option value="$PROJECT_DIR$/union/union.py" />
+        <option value="$PROJECT_DIR$/check/rndtop100_chapter.py" />
+        <option value="$PROJECT_DIR$/check/norm_top100.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="313" />
-    <option name="y" value="24" />
+    <option name="x" value="-3" />
+    <option name="y" value="33" />
     <option name="width" value="1429" />
     <option name="height" value="872" />
   </component>
@@ -71,6 +79,21 @@
               <item name="item_norm" type="b2602c69:ProjectViewProjectNode" />
               <item name="item_norm" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="item_norm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="item_norm" type="462c0819:PsiDirectoryNode" />
+              <item name="check" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="item_norm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="item_norm" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="item_norm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="item_norm" type="462c0819:PsiDirectoryNode" />
+              <item name="union" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -83,6 +106,9 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\book\item_norm\resource" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\book\item_norm\resource" />
     </key>
@@ -99,7 +125,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.norm_top100">
+    <configuration name="norm_top100" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="item_norm" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\Python\Python37\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/check" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/check/norm_top100.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="union_sim" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="item_norm" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -123,6 +170,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.norm_top100" />
         <item itemvalue="Python.union_sim" />
       </list>
     </recent_temporary>
@@ -140,8 +188,17 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="313" y="24" width="1429" height="872" extended-state="0" />
+    <frame x="-3" y="33" width="1429" height="872" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23778264" />
@@ -149,15 +206,15 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32884097" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.28167117" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28167117" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4996353" visible="true" weight="0.24528302" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32884097" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32884097" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4996353" weight="0.24528302" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5003647" side_tool="true" weight="0.24528302" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32884097" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -223,12 +280,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/union/union.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="92" column="17" lean-forward="true" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="17" />
+        <state relative-caret-position="169">
+          <caret line="135" selection-start-line="135" selection-end-line="135" />
           <folding>
-            <element signature="e#688#1065#0" expanded="true" />
-            <element signature="e#1124#1823#0" expanded="true" />
+            <element signature="e#122#613#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/finally_result.txt">
+      <provider selected="true" editor-type-id="LargeFileEditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/item_rnd.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/check/rndtop100_chapter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="47" lean-forward="true" selection-start-line="4" selection-start-column="47" selection-end-line="5" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/chapter.txt">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="LargeFileEditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/check/norm_top100.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/check_top100.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4">
+          <caret line="603" column="18" lean-forward="true" selection-start-line="603" selection-start-column="18" selection-end-line="603" selection-end-column="18" />
         </state>
       </provider>
     </entry>
