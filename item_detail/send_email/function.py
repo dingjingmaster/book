@@ -144,10 +144,10 @@ def unmask_fee_charge(logList, unmaskFeeList):
         allBookUser = 1
     if allBookChapter == 0:
         allBookChapter = 1
-    unmaskFeeList.append(("cp正版书", unmaskBookFree, float(unmaskBookFree)/allBook * 100\
+    unmaskFeeList.append(("互联网书", unmaskBookFree, float(unmaskBookFree)/allBook * 100\
             , unmaskBookUserFree, float(unmaskBookUserFree)/allBookUser * 100\
             , unmaskBookChapterFree, float(unmaskBookChapterFree)/allBookChapter * 100))
-    unmaskFeeList.append(("互联网书", unmaskBookCharge, float(unmaskBookCharge)/allBook * 100\
+    unmaskFeeList.append(("cp正版书", unmaskBookCharge, float(unmaskBookCharge)/allBook * 100\
             , unmaskBookUserCharge, float(unmaskBookUserCharge)/allBookUser * 100\
             , unmaskBookChapterCharge, float(unmaskBookChapterCharge)/allBookChapter * 100))
     return unmaskFeeList
