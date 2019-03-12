@@ -122,21 +122,22 @@ def unmask_fee_charge(logList, unmaskFeeList):
         usernumTemp = int(userNum) + int(bysByuUserNum) + int(bysFbyuUserNum)
         userChargeTemp = int(chapterNum) + int(bysByuChapterNum) + int(bysFbyuChapterNum)
         if maskLevel != u'1':
-            allBook += 1
-            allBookUser += int(usernumTemp)
-            allBookChapter += int(userChargeTemp)
-            if int(bysByuUserNum) > 0 and int(bysFbyuUserNum) > 0:
-                allBook += 1
             if feeFlag == u'1':
+                allBook += 1
+                allBookUser += int(usernumTemp)
+                allBookChapter += int(userChargeTemp)
+                
                 unmaskBookCharge += 1
                 unmaskBookUserCharge += int(usernumTemp)
                 unmaskBookChapterCharge += int(userChargeTemp)
-            elif feeFlag == u'0':
+            elif feeFlag != u'1':
+                allBook += 1
+                allBookUser += int(usernumTemp)
+                allBookChapter += int(userChargeTemp)
+                
                 unmaskBookFree += 1
                 unmaskBookUserFree += int(usernumTemp)
                 unmaskBookChapterFree += int(userChargeTemp)
-            else:
-                print gid
     if allBook == 0:
         allBook = 1
     if allBookUser == 0:
@@ -187,21 +188,18 @@ def unmask_charge_info(logList, unmaskFeeList):
             unmaskBookCharge += 1
             unmaskBookUserCharge += usernumTemp
             unmaskBookChapterCharge += userChargeTemp
-            if int(bysByuUserNum) > 0 and int(bysFbyuUserNum) > 0:
-                unmaskBookCharge += 1
-
             # 包月
-            if by == u'1':
+            if by != u'000':
                 unmaskByBookCharge += 1
                 unmaskByBookUserCharge += int(usernumTemp)
                 unmaskByBookChapterCharge += int(userChargeTemp)
             # 限免
-            elif tf == u'1':
+            elif tf != u'000':
                 unmaskTfBookCharge += 1
                 unmaskTfBookUserCharge += int(usernumTemp)
                 unmaskTfBookChapterCharge += int(userChargeTemp)
             # 按章付费
-            elif fc == u'1':
+            elif fc != u'000':
                 unmaskFcBookCharge += 1
                 unmaskFcBookUserCharge += int(usernumTemp)
                 unmaskFcBookChapterCharge += int(userChargeTemp)

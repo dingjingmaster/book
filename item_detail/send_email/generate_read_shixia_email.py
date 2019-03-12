@@ -13,7 +13,7 @@ if __name__ == '__main__':
     resultPath = sys.argv[2]
 
     # 输出结果链表
-    outBufG = ""
+    outBufG = ''
     logListG = []                                           # 日志
     ifmaskListG = []                                        # 是否屏蔽
     unmaskFeeChargeListG = []                               # 非屏蔽 互联网书 与 cp 正版书情况
