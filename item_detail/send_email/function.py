@@ -257,7 +257,7 @@ def unmask_charge_step(logList, chargelist):
             , bysfbyuusernum, bysfbyuchapternum = i
         usernumtemp = int(usernum) + int(bysbyuusernum) + int(bysfbyuusernum)
         userchargetemp = int(chapternum) + int(bysbyuchapternum) + int(bysfbyuchapternum)
-        if feeflag == u'1':
+        if feeflag == u'1' and masklevel != u'1':
             if by != u'000':
                 continue
             # 限免
