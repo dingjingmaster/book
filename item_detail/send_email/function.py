@@ -98,6 +98,138 @@ def mask_level_list(logList, ifmaskList):
     return ifmaskList
 
 
+# 天阅读-非屏蔽互联网书 与 付费书情况
+def unmask_fee_charge(logList, unmaskFeeList):
+    unmaskBookFree = 0              # 非屏蔽互联网书的量
+    unmaskBookUserFree = 0          # 非屏蔽互联网用户量
+    unmaskBookChapterFree = 0       # 非屏蔽互联网章节量
+
+    unmaskBookCharge = 0            # 非屏蔽 cp正版书 书籍量
+    unmaskBookUserCharge = 0        # 非屏蔽 cp正版书 用户量
+    unmaskBookChapterCharge = 0     # 非屏蔽 cp正版书 章节量
+
+    allBook = 0
+    allBookUser = 0
+    allBookChapter = 0
+
+    for i in logList:
+        usernumTemp = 0
+        userChargeTemp = 0
+        gid, name, author, maskLevel, feeFlag, by, tf, ncp, fc\
+                , userNum, chapterNum\
+                , bysByuUserNum, bysByuChapterNum\
+                , bysFbyuUserNum, bysFbyuChapterNum = i
+        usernumTemp = int(userNum) + int(bysByuUserNum) + int(bysFbyuUserNum)
+        userChargeTemp = int(chapterNum) + int(bysByuChapterNum) + int(bysFbyuChapterNum)
+        if maskLevel != u'1':
+            allBook += 1
+            allBookUser += int(usernumTemp)
+            allBookChapter += int(userChargeTemp)
+            if int(bysByuUserNum) > 0 and int(bysFbyuUserNum) > 0:
+                allBook += 1
+            if feeFlag == u'1':
+                unmaskBookCharge += 1
+                unmaskBookUserCharge += int(usernumTemp)
+                unmaskBookChapterCharge += int(userChargeTemp)
+            elif feeFlag == u'0':
+                unmaskBookFree += 1
+                unmaskBookUserFree += int(usernumTemp)
+                unmaskBookChapterFree += int(userChargeTemp)
+            else:
+                print gid
+    if allBook == 0:
+        allBook = 1
+    if allBookUser == 0:
+        allBookUser = 1
+    if allBookChapter == 0:
+        allBookChapter = 1
+    unmaskFeeList.append(("cp正版书", unmaskBookFree, float(unmaskBookFree)/allBook * 100\
+            , unmaskBookUserFree, float(unmaskBookUserFree)/allBookUser * 100\
+            , unmaskBookChapterFree, float(unmaskBookChapterFree)/allBookChapter * 100))
+    unmaskFeeList.append(("互联网书", unmaskBookCharge, float(unmaskBookCharge)/allBook * 100\
+            , unmaskBookUserCharge, float(unmaskBookUserCharge)/allBookUser * 100\
+            , unmaskBookChapterCharge, float(unmaskBookChapterCharge)/allBookChapter * 100))
+    return unmaskFeeList
+
+
+# 天阅读-非屏蔽正版书 与 付费情况
+def unmask_charge_info(logList, unmaskFeeList):
+    unmaskBookCharge = 0            # 非屏蔽 cp正版书 书籍量
+    unmaskBookUserCharge = 0        # 非屏蔽 cp正版书 用户量
+    unmaskBookChapterCharge = 0     # 非屏蔽 cp正版书 章节量
+
+    unmaskByBookCharge = 0          # 非屏蔽 包月书 书籍量
+    unmaskByBookUserCharge = 0      # 非屏蔽 包月书 用户量
+    unmaskByBookChapterCharge = 0   # 非屏蔽 包月书 章节量
+
+    unmaskTfBookCharge = 0          # 非屏蔽 限免书 书籍量
+    unmaskTfBookUserCharge = 0      # 非屏蔽 限免书 用户量
+    unmaskTfBookChapterCharge = 0   # 非屏蔽 限免书 章节量
+
+    unmaskFcBookCharge = 0          # 非屏蔽 按章付费书 书籍量
+    unmaskFcBookUserCharge = 0      # 非屏蔽 按章付费书 用户量
+    unmaskFcBookChapterCharge = 0   # 非屏蔽 按章付费书 章节量
+
+    unmaskOBookCharge = 0          # 非屏蔽 全免书 书籍量
+    unmaskOBookUserCharge = 0      # 非屏蔽 全免书 用户量
+    unmaskOBookChapterCharge = 0   # 非屏蔽 全免书 章节量
+
+    for i in logList:
+        usernumTemp = 0
+        userChargeTemp = 0
+        gid, name, author, maskLevel, feeFlag, by, tf, ncp, fc \
+                , userNum, chapterNum\
+                , bysByuUserNum, bysByuChapterNum\
+                , bysFbyuUserNum, bysFbyuChapterNum = i
+        usernumTemp = int(userNum) + int(bysByuUserNum) + int(bysFbyuUserNum)
+        userChargeTemp = int(chapterNum) + int(bysByuChapterNum) + int(bysFbyuChapterNum)
+        if maskLevel != u'1' and feeFlag == u'1':
+            unmaskBookCharge += 1
+            unmaskBookUserCharge += usernumTemp
+            unmaskBookChapterCharge += userChargeTemp
+            if int(bysByuUserNum) > 0 and int(bysFbyuUserNum) > 0:
+                unmaskBookCharge += 1
+
+            # 包月
+            if by == u'1':
+                unmaskByBookCharge += 1
+                unmaskByBookUserCharge += int(usernumTemp)
+                unmaskByBookChapterCharge += int(userChargeTemp)
+            # 限免
+            elif tf == u'1':
+                unmaskTfBookCharge += 1
+                unmaskTfBookUserCharge += int(usernumTemp)
+                unmaskTfBookChapterCharge += int(userChargeTemp)
+            # 按章付费
+            elif fc == u'1':
+                unmaskFcBookCharge += 1
+                unmaskFcBookUserCharge += int(usernumTemp)
+                unmaskFcBookChapterCharge += int(userChargeTemp)
+            else:
+                unmaskOBookCharge += 1
+                unmaskOBookUserCharge += int(usernumTemp)
+                unmaskOBookChapterCharge += int(userChargeTemp)
+    if unmaskBookCharge == 0:
+        unmaskBookCharge = 1
+    if unmaskBookUserCharge == 0:
+        unmaskBookUserCharge = 1
+    if unmaskBookChapterCharge == 0:
+        unmaskBookChapterCharge = 1
+    unmaskFeeList.append(("包月书", unmaskByBookCharge, float(unmaskByBookCharge)/unmaskBookCharge * 100\
+                              , unmaskByBookUserCharge, float(unmaskByBookUserCharge)/unmaskBookUserCharge * 100\
+                              , unmaskByBookChapterCharge, float(unmaskByBookChapterCharge)/unmaskBookChapterCharge * 100))
+    unmaskFeeList.append(("限免书", unmaskTfBookCharge, float(unmaskTfBookCharge) / unmaskBookCharge * 100 \
+                              , unmaskTfBookUserCharge, float(unmaskTfBookUserCharge) / unmaskBookUserCharge * 100 \
+                              , unmaskTfBookChapterCharge, float(unmaskTfBookChapterCharge) / unmaskBookChapterCharge * 100))
+    unmaskFeeList.append(("按章付费书", unmaskFcBookCharge, float(unmaskFcBookCharge) / unmaskBookCharge * 100 \
+                              , unmaskFcBookUserCharge, float(unmaskFcBookUserCharge) / unmaskBookUserCharge * 100 \
+                              , unmaskFcBookChapterCharge, float(unmaskFcBookChapterCharge) / unmaskBookChapterCharge * 100))
+    unmaskFeeList.append(("其它(付费书免费读)", unmaskOBookCharge, float(unmaskOBookCharge) / unmaskBookCharge * 100 \
+                              , unmaskOBookUserCharge, float(unmaskOBookUserCharge) / unmaskBookUserCharge * 100 \
+                              , unmaskOBookChapterCharge, float(unmaskOBookChapterCharge) / unmaskBookChapterCharge * 100))
+    return unmaskFeeList
+
+
 # 天阅读-屏蔽书情况
 def mask_fee_flag(logList, maskFeeList):
     maskBookFree = 0            # 屏蔽免费书的量
