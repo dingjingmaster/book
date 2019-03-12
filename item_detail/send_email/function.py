@@ -314,6 +314,83 @@ def unmask_charge_step(logList, chargelist):
     return chargelist
 
 
+# 天阅读-非屏蔽 互联网书
+def unmask_free_step(loglist, freelist):
+    freebt0t10b = 0  # 书籍数
+    freebt10t100b = 0
+    freebt100t1000b = 0
+    freebt1000t10000b = 0
+    freegt10000b = 0
+    freebt0t10u = 0  # 用户数
+    freebt10t100u = 0
+    freebt100t1000u = 0
+    freebt1000t10000u = 0
+    freegt10000u = 0
+    freebt0t10c = 0  # 付费章节
+    freebt10t100c = 0
+    freebt100t1000c = 0
+    freebt1000t10000c = 0
+    freegt10000c = 0
+    
+    allbook = 0
+    allbookuser = 0
+    allbookchapter = 0
+    
+    for i in loglist:
+        gid, name, author, masklevel, feeflag, by, tf, ncp, fc \
+            , usernum, chapternum \
+            , bysbyuusernum, bysbyuchapternum \
+            , bysfbyuusernum, bysfbyuchapternum = i
+        usernumtemp = int(usernum) + int(bysbyuusernum) + int(bysfbyuusernum)
+        userfreetemp = int(chapternum) + int(bysbyuchapternum) + int(bysfbyuchapternum)
+        if masklevel != u'1' and feeflag != u'1':
+            allbook += 1
+            allbookuser += int(usernumtemp)
+            allbookchapter += int(userfreetemp)
+            if int(usernumtemp) > 0 and int(usernumtemp) < 10:
+                freebt0t10b += 1
+                freebt0t10u += int(usernumtemp)
+                freebt0t10c += int(userfreetemp)
+            elif int(usernumtemp) >= 10 and int(usernumtemp) < 100:
+                freebt10t100b += 1
+                freebt10t100u += int(usernumtemp)
+                freebt10t100c += int(userfreetemp)
+            elif int(usernumtemp) >= 100 and int(usernumtemp) < 1000:
+                freebt100t1000b += 1
+                freebt100t1000u += int(usernumtemp)
+                freebt100t1000c += int(userfreetemp)
+            elif int(usernumtemp) >= 1000 and int(usernumtemp) < 10000:
+                freebt1000t10000b += 1
+                freebt1000t10000u += int(usernumtemp)
+                freebt1000t10000c += int(userfreetemp)
+            else:
+                freegt10000b += 1
+                freegt10000u += int(usernumtemp)
+                freegt10000c += int(userfreetemp)
+    if allbook == 0:
+        allbook = 1
+    if allbookuser == 0:
+        allbookuser = 1
+    if allbookchapter == 0:
+        allbookchapter = 1
+    freelist.append(("(0,10)", freebt0t10b, float(freebt0t10b) / allbook * 100 \
+                         , freebt0t10u, float(freebt0t10u) / allbookuser * 100 \
+                         , freebt0t10c, float(freebt0t10c) / allbookchapter * 100))
+    freelist.append(("[10,100)", freebt10t100b, float(freebt10t100b) / allbook * 100 \
+                         , freebt10t100u, float(freebt10t100u) / allbookuser * 100 \
+                         , freebt10t100c, float(freebt10t100c) / allbookchapter * 100))
+    freelist.append(("[100,1000)", freebt100t1000b, float(freebt100t1000b) / allbook * 100 \
+                         , freebt100t1000u, float(freebt100t1000u) / allbookuser * 100 \
+                         , freebt100t1000c, float(freebt100t1000c) / allbookchapter * 100))
+    freelist.append(("[1000,10000)", freebt1000t10000b, float(freebt1000t10000b) / allbook * 100 \
+                         , freebt1000t10000u, float(freebt1000t10000u) / allbookuser * 100 \
+                         , freebt1000t10000c, float(freebt1000t10000c) / allbookchapter * 100))
+    freelist.append(("[10000, ...)", freegt10000b, float(freegt10000b) / allbook * 100 \
+                         , freegt10000u, float(freegt10000u) / allbookuser * 100 \
+                         , freegt10000c, float(freegt10000c) / allbookchapter * 100))
+    return freelist
+
+
 # 天阅读-屏蔽书情况
 def mask_fee_flag(logList, maskFeeList):
     maskBookFree = 0            # 屏蔽免费书的量
