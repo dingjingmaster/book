@@ -219,10 +219,10 @@ def unmask_charge_info(logList, unmaskFeeList):
     unmaskFeeList.append(("限免书", unmaskTfBookCharge, float(unmaskTfBookCharge) / unmaskBookCharge * 100 \
                               , unmaskTfBookUserCharge, float(unmaskTfBookUserCharge) / unmaskBookUserCharge * 100 \
                               , unmaskTfBookChapterCharge, float(unmaskTfBookChapterCharge) / unmaskBookChapterCharge * 100))
-    unmaskFeeList.append(("按章付费书", unmaskFcBookCharge, float(unmaskFcBookCharge) / unmaskBookCharge * 100 \
+    unmaskFeeList.append(("免费cp", unmaskFcBookCharge, float(unmaskFcBookCharge) / unmaskBookCharge * 100 \
                               , unmaskFcBookUserCharge, float(unmaskFcBookUserCharge) / unmaskBookUserCharge * 100 \
                               , unmaskFcBookChapterCharge, float(unmaskFcBookChapterCharge) / unmaskBookChapterCharge * 100))
-    unmaskFeeList.append(("其它(付费书免费读)", unmaskOBookCharge, float(unmaskOBookCharge) / unmaskBookCharge * 100 \
+    unmaskFeeList.append(("其它(按章付费)", unmaskOBookCharge, float(unmaskOBookCharge) / unmaskBookCharge * 100 \
                               , unmaskOBookUserCharge, float(unmaskOBookUserCharge) / unmaskBookUserCharge * 100 \
                               , unmaskOBookChapterCharge, float(unmaskOBookChapterCharge) / unmaskBookChapterCharge * 100))
     return unmaskFeeList
