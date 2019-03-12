@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6393b52f-c17b-4fb9-a966-354c257f0c78" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/send_email/function.py" beforeDir="false" afterPath="$PROJECT_DIR$/send_email/function.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/send_email/generate_read_shixia_email.py" beforeDir="false" afterPath="$PROJECT_DIR$/send_email/generate_read_shixia_email.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +26,7 @@
         <entry file="file://$PROJECT_DIR$/send_email/generate_read_shixia_email.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="591">
-              <caret line="32" selection-start-line="32" selection-end-line="33" />
+              <caret line="32" column="58" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -33,10 +34,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/send_email/function.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="149" column="32" selection-start-line="149" selection-start-column="32" selection-end-line="149" selection-end-column="32" />
+            <state relative-caret-position="317">
+              <caret line="315" lean-forward="true" selection-start-line="315" selection-end-line="315" />
               <folding>
-                <element signature="e#5596#8614#0" expanded="true" />
+                <element signature="e#27716#31208#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -86,8 +87,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="480" />
-    <option name="y" value="125" />
+    <option name="x" value="388" />
     <option name="width" value="1554" />
     <option name="height" value="914" />
   </component>
@@ -162,7 +162,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="480" y="125" width="1554" height="914" extended-state="0" />
+    <frame x="388" y="0" width="1554" height="914" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20187166" />
@@ -237,13 +237,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/send_email/generate_read_shixia_email.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="32" selection-start-line="32" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/send_email/generate_read_email.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
@@ -251,12 +244,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/send_email/generate_read_shixia_email.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="32" column="58" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/send_email/function.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="149" column="32" selection-start-line="149" selection-start-column="32" selection-end-line="149" selection-end-column="32" />
+        <state relative-caret-position="317">
+          <caret line="315" lean-forward="true" selection-start-line="315" selection-end-line="315" />
           <folding>
-            <element signature="e#5596#8614#0" expanded="true" />
+            <element signature="e#27716#31208#0" expanded="true" />
           </folding>
         </state>
       </provider>

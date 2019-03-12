@@ -228,6 +228,92 @@ def unmask_charge_info(logList, unmaskFeeList):
     return unmaskFeeList
 
 
+# 天阅读-非屏蔽 按章付费书
+def unmask_charge_step(logList, chargelist):
+    chargebt0t10b = 0  # 书籍数
+    chargebt10t100b = 0
+    chargebt100t1000b = 0
+    chargebt1000t10000b = 0
+    chargegt10000b = 0
+    chargebt0t10u = 0  # 用户数
+    chargebt10t100u = 0
+    chargebt100t1000u = 0
+    chargebt1000t10000u = 0
+    chargegt10000u = 0
+    chargebt0t10c = 0  # 付费章节
+    chargebt10t100c = 0
+    chargebt100t1000c = 0
+    chargebt1000t10000c = 0
+    chargegt10000c = 0
+    
+    allbook = 0
+    allbookuser = 0
+    allbookchapter = 0
+    
+    for i in logList:
+        gid, name, author, masklevel, feeflag, by, tf, ncp, fc \
+            , usernum, chapternum \
+            , bysbyuusernum, bysbyuchapternum \
+            , bysfbyuusernum, bysfbyuchapternum = i
+        usernumtemp = int(usernum) + int(bysbyuusernum) + int(bysfbyuusernum)
+        userchargetemp = int(chapternum) + int(bysbyuchapternum) + int(bysfbyuchapternum)
+        if feeflag == u'1':
+            if by != u'000':
+                continue
+            # 限免
+            elif tf != u'000':
+                continue
+            # 按章付费
+            elif fc != u'000':
+                continue
+            else:
+                allbook += 1
+                allbookuser += int(usernumtemp)
+                allbookchapter += int(userchargetemp)
+                if int(usernumtemp) > 0 and int(usernumtemp) < 10:
+                    chargebt0t10b += 1
+                    chargebt0t10u += int(usernumtemp)
+                    chargebt0t10c += int(userchargetemp)
+                elif int(usernumtemp) >= 10 and int(usernumtemp) < 100:
+                    chargebt10t100b += 1
+                    chargebt10t100u += int(usernumtemp)
+                    chargebt10t100c += int(userchargetemp)
+                elif int(usernumtemp) >= 100 and int(usernumtemp) < 1000:
+                    chargebt100t1000b += 1
+                    chargebt100t1000u += int(usernumtemp)
+                    chargebt100t1000c += int(userchargetemp)
+                elif int(usernumtemp) >= 1000 and int(usernumtemp) < 10000:
+                    chargebt1000t10000b += 1
+                    chargebt1000t10000u += int(usernumtemp)
+                    chargebt1000t10000c += int(userchargetemp)
+                elif int(usernumtemp) >= 10000:
+                    chargegt10000b += 1
+                    chargegt10000u += int(usernumtemp)
+                    chargegt10000c += int(userchargetemp)
+    if allbook == 0:
+        allbook = 1
+    if allbookuser == 0:
+        allbookuser = 1
+    if allbookchapter == 0:
+        allbookchapter = 1
+    chargelist.append(("(0,10)", chargebt0t10b, float(chargebt0t10b) / allbook * 100 \
+                           , chargebt0t10u, float(chargebt0t10u) / allbookuser * 100 \
+                           , chargebt0t10c, float(chargebt0t10c) / allbookchapter * 100))
+    chargelist.append(("[10,100)", chargebt10t100b, float(chargebt10t100b) / allbook * 100 \
+                           , chargebt10t100u, float(chargebt10t100u) / allbookuser * 100 \
+                           , chargebt10t100c, float(chargebt10t100c) / allbookchapter * 100))
+    chargelist.append(("[100,1000)", chargebt100t1000b, float(chargebt100t1000b) / allbook * 100 \
+                           , chargebt100t1000u, float(chargebt100t1000u) / allbookuser * 100 \
+                           , chargebt100t1000c, float(chargebt100t1000c) / allbookchapter * 100))
+    chargelist.append(("[1000,10000)", chargebt1000t10000b, float(chargebt1000t10000b) / allbook * 100 \
+                           , chargebt1000t10000u, float(chargebt1000t10000u) / allbookuser * 100 \
+                           , chargebt1000t10000c, float(chargebt1000t10000c) / allbookchapter * 100))
+    chargelist.append(("[10000, ...)", chargegt10000b, float(chargegt10000b) / allbook * 100 \
+                           , chargegt10000u, float(chargegt10000u) / allbookuser * 100 \
+                           , chargegt10000c, float(chargegt10000c) / allbookchapter * 100))
+    return chargelist
+
+
 # 天阅读-屏蔽书情况
 def mask_fee_flag(logList, maskFeeList):
     maskBookFree = 0            # 屏蔽免费书的量
