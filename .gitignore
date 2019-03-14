@@ -1,6 +1,10 @@
+out/
 resource/
 __pycache__/
 venv/
+.idea/
+target/
+lib/
 
 *.py[cod]
 *$py.class
