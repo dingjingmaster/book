@@ -13,16 +13,15 @@ import com.easou.dingjing.library.ReadEvent
 
 object ReadEvent {
   def main(args: Array[String]): Unit = {
-//    val bilogPath = args(0)
-    val bilogPath = "hdfs://10.26.29.210:8020/user/hive/warehouse/event_info.db/b_read_chapter/ds=2019-03-12/*"
-    val savePath = "hdfs://10.26.26.145:8020/rs/dingjing/demo"
+    val bilogPath = args(0)
+    val savePath = args(1)
 
     val conf = new SparkConf().setAppName("day_statistic")
                         .set("spark.executor.memory", "20g")
                         .set("spark.driver.memory", "4g")
                         .set("spark.cores.max", "10")
     val sc = new SparkContext(conf)
-    val logRDD = sc.textFile(bilogPath)
+    val logRDD = sc.textFile(bilogPath + "/*")
                         .map(parse_log)
                         .filter(line=> line._2(0)._1 != "")
                         .filter(line=> line._2(0)._2 != "")
