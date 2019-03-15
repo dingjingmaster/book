@@ -9,4 +9,4 @@ biLogPath="hdfs://10.26.29.210:8020/user/hive/warehouse/event_info.db/b_read_cha
 savePath="hdfs://10.26.26.145:8020/rs/dingjing/static/read_day/${today}/"
 
 cd ${workDir}/jar
-spark-submit --class com.easou.dingjing.statistic.day.ReadEvent ./read_statistic.jar "${biLogPath}" "${savePath}"
+spark-submit --driver-memory 4096M --class com.easou.dingjing.statistic.day.ReadEvent ./read_statistic.jar "${biLogPath}" "${savePath}"
