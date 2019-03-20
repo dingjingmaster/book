@@ -302,7 +302,7 @@ def main():
             line = line.strip('\n')
             arr = line.split('\t')
             if len(arr) != 5:
-                print ("错误行:" + line)
+                print("错误行:" + line)
                 if line == "" or line == None:
                     print ("执行完毕-开始退出")
                     return
