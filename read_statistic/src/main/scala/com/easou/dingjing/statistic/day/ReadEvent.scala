@@ -53,7 +53,7 @@ object ReadEvent {
       limitfree += info._5
     }
 
-    return "" + x._1.replace("|", "\t") + "\t" + gids.toArray.length.toString + "\t" + users.toArray.length.toString + "\t" + charge.toString + "\t" + free.toString + "\t" + limitfree.toString + "\t" + charge + free + limitfree.toString
+    return "" + x._1.replace("|", "\t") + "\t" + gids.toArray.length.toString + "\t" + users.toArray.length.toString + "\t" + charge.toString + "\t" + free.toString + "\t" + limitfree.toString + "\t" + (charge + free + limitfree).toString
   }
 
   def parse_log(x : String) : Tuple2[String, List[Tuple5[String, String, Int, Int, Int]]] = {
