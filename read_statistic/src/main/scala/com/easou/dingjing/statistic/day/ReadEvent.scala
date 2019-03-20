@@ -33,7 +33,7 @@ object ReadEvent {
     sc.stop()
   }
 
-  def statistic(x: Tuple2[String, List[Tuple6[String, String, Int, Int, Int, Int]]]): String = {
+  def statistic(x: Tuple2[String, List[Tuple5[String, String, Int, Int, Int]]]): String = {
     var gids = Set[String]()
     val users = Set[String]()
 
@@ -53,10 +53,10 @@ object ReadEvent {
       limitfree += info._5
     }
 
-    return "" + x._1.replace("|", "\t") + "\t" + gids.toArray.length.toString + "\t" + users.toArray.length.toString + "\t" + charge.toString + "\t" + free.toString + "\t" + limitfree.toString + (charge + free + limitfree).toString
+    return "" + x._1.replace("|", "\t") + "\t" + gids.toArray.length.toString + "\t" + users.toArray.length.toString + "\t" + charge.toString + "\t" + free.toString + "\t" + limitfree.toString + "\t" + charge + free + limitfree.toString
   }
 
-  def parse_log(x : String) : Tuple2[String, List[Tuple6[String, String, Int, Int, Int, Int]]] = {
+  def parse_log(x : String) : Tuple2[String, List[Tuple5[String, String, Int, Int, Int]]] = {
     val re = new ReadEvent().parseLine(x).getValues(List[String]("appid", "userlevel", "userarea",
                     "usertype", "isnewuser", "status", "booktype", "gid", "uid", "appudid",
                     "sort", "cpid", "ischapterincharged", "entrance", "userpay"))
@@ -163,6 +163,6 @@ object ReadEvent {
       chapterFee = 1
     }
 
-    return (appid+"|"+userLevel+"|"+userArea+"|"+isMonth+"|"+userPay+"|"+isNewUser+"|"+bookStatus+"|"+bookType, List(Tuple6(gid, key, chapterCharge, chapterFee, chapterLimitFree,1)))
+    return (appid+"|"+userLevel+"|"+userArea+"|"+isMonth+"|"+userPay+"|"+isNewUser+"|"+bookStatus+"|"+bookType, List(Tuple5(gid, key, chapterCharge, chapterFee, chapterLimitFree)))
   }
 }
