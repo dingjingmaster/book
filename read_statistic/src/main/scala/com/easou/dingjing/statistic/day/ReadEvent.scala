@@ -163,6 +163,10 @@ object ReadEvent {
       chapterFee = 1
     }
 
+//    if(entrance != "书架") {
+//      return ("", List(("","",0,0,0)))
+//    }
+
     return (appid+"|"+userLevel+"|"+userArea+"|"+isMonth+"|"+userPay+"|"+isNewUser+"|"+bookStatus+"|"+bookType, List(Tuple5(gid, key, chapterCharge, chapterFee, chapterLimitFree)))
   }
 }
