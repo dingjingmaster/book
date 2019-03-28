@@ -1,30 +1,23 @@
 package com.easou.dingjing.statistic.day
 
-import org.apache.spark.SparkConf
-import org.apache.spark.SparkContext
-import org.apache.spark.rdd.RDD
-
-import scala.util.matching.Regex
-import scala.collection.mutable.Set
-import scala.collection.mutable.Map
-import scala.collection.mutable.ArrayBuffer
-
 import com.easou.dingjing.library.ReadEvent
+import org.apache.spark.{SparkConf, SparkContext}
 
-object ReadEvent {
+import scala.collection.mutable.Set
+
+object ReadEventUser {
   def main(args: Array[String]): Unit = {
     val bilogPath = args(0)
     val savePath = args(1)
 
-    val conf = new SparkConf().setAppName("day_statistic")
-                        .set("spark.executor.memory", "20g")
+    val conf = new SparkConf().setAppName("day_statistic_user")
+                        .set("spark.executor.memory", "10g")
                         .set("spark.driver.memory", "4g")
                         .set("spark.cores.max", "10")
     val sc = new SparkContext(conf)
     val logRDD = sc.textFile(bilogPath + "/*")
                         .map(parse_log)
-                        .filter(line=> line._2(0)._1 != "")
-                        .filter(line=> line._2(0)._2 != "")
+                        .filter(line=> line._2(0) != "")
                         .reduceByKey((x, y) => x ::: y )
     logRDD.map(statistic)
         .filter(x => x != "")
@@ -33,30 +26,16 @@ object ReadEvent {
     sc.stop()
   }
 
-  def statistic(x: Tuple2[String, List[Tuple5[String, String, Int, Int, Int]]]): String = {
-    var gids = Set[String]()
-    val users = Set[String]()
-
-    var gid = ""
-    var user = ""
-    var charge = 0
-    var free = 0
-    var limitfree = 0
-
-    for (info <- x._2) {
-      gid = info._1
-      user = info._2
-      gids.add(gid)
+  def statistic(x: Tuple2[String, List[String]]): String = {
+    val users = scala.collection.mutable.Set[String]()
+    for (user <- x._2) {
       users.add(user)
-      charge += info._3
-      free += info._4
-      limitfree += info._5
     }
 
-    return "" + x._1.replace("|", "\t") + "\t" + gids.toArray.length.toString + "\t" + users.toArray.length.toString + "\t" + charge.toString + "\t" + free.toString + "\t" + limitfree.toString + "\t" + (charge + free + limitfree).toString
+    return "" + x._1.replace("|", "\t") + "\t" + users.toArray.length.toString
   }
 
-  def parse_log(x : String) : Tuple2[String, List[Tuple5[String, String, Int, Int, Int]]] = {
+  def parse_log(x : String) : Tuple2[String, List[String]] = {
     val re = new ReadEvent().parseLine(x).getValues(List[String]("appid", "userlevel", "userarea",
                     "usertype", "isnewuser", "status", "booktype", "gid", "uid", "appudid",
                     "sort", "cpid", "ischapterincharged", "entrance", "userpay"))
@@ -163,10 +142,6 @@ object ReadEvent {
       chapterFee = 1
     }
 
-//    if(entrance != "书架") {
-//      return ("", List(("","",0,0,0)))
-//    }
-
-    return (appid+"|"+userLevel+"|"+userArea+"|"+isMonth+"|"+userPay+"|"+isNewUser+"|"+bookStatus+"|"+bookType, List(Tuple5(gid, key, chapterCharge, chapterFee, chapterLimitFree)))
+    return (appid+"|"+userLevel+"|"+userArea+"|"+isMonth+"|"+userPay+"|"+isNewUser, List(key))
   }
 }
